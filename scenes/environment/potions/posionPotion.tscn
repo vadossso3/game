@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2er2u8a3td4p"]
+
+[sub_resource type="Gradient" id="Gradient_xh81b"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_acp47"]
+gradient = SubResource("Gradient_xh81b")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1lg2"]
+size = Vector2(64, 64)
+
+[node name="PosionPotion" type="Area2D" groups=["posionPotion"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.119845, 0.229069, 0, 1)
+texture = SubResource("GradientTexture2D_acp47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a1lg2")

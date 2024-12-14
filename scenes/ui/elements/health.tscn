@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ci6dhwid77iy0"]
+
+[node name="Health" type="Label"]
+offset_right = 28.0
+offset_bottom = 23.0
+text = "100"
+vertical_alignment = 1

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://mrnaxq8h4jm1"]
+
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://scenes/player.tscn" id="1_7qr8g"]
+[ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://scenes/environment/potions/healthPotion.tscn" id="2_1cuwt"]
+[ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://scenes/environment/potions/posionPotion.tscn" id="4_p5bvm"]
+[ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://scenes/ui/HUD.tscn" id="4_q5gyy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ut3v"]
+
+[node name="Main" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
+
+[node name="Player" parent="." instance=ExtResource("1_7qr8g")]
+material = SubResource("CanvasItemMaterial_0ut3v")
+position = Vector2(287, 185)
+
+[node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
+position = Vector2(242, 385)
+
+[node name="HealthPotion2" parent="." instance=ExtResource("2_1cuwt")]
+position = Vector2(345, 457)
+
+[node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
+position = Vector2(520, 348)
+
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]

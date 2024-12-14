@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddsh7hv3ohbbc"]
+
+[ext_resource type="PackedScene" uid="uid://ci6dhwid77iy0" path="res://scenes/ui/elements/health.tscn" id="1_or1l0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2aawe"]
+font_size = 40
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Health" parent="." instance=ExtResource("1_or1l0")]
+label_settings = SubResource("LabelSettings_2aawe")
