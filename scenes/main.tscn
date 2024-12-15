@@ -1,27 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=8 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://scenes/player.tscn" id="1_7qr8g"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xhp58"]
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://scenes/environment/potions/healthPotion.tscn" id="2_1cuwt"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="2_vsyra"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://scenes/environment/potions/posionPotion.tscn" id="4_p5bvm"]
 [ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://scenes/ui/HUD.tscn" id="4_q5gyy"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ut3v"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_xhp58")
 
 [node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
+script = ExtResource("2_vsyra")
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(522, 150)
+position = Vector2(192, 203)
 
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(242, 385)
+position = Vector2(377, 216)
 
 [node name="HealthPotion2" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(345, 457)
+position = Vector2(467, 217)
 
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
-position = Vector2(520, 348)
+position = Vector2(363, 337)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]

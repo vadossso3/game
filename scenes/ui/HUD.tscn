@@ -8,4 +8,5 @@ font_size = 40
 [node name="HUD" type="CanvasLayer"]
 
 [node name="Health" parent="." instance=ExtResource("1_or1l0")]
+text = "0"
 label_settings = SubResource("LabelSettings_2aawe")

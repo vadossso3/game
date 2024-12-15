@@ -1,10 +1,15 @@
 extends Area2D
 
 const SPEED = 300.0
-var health = 100
+@export var max_health = 100
+var health = 10
 
-signal hit
+signal health_changed(health)
+
 @onready var animated_sprite = $AnimatedSprite2D
+
+func _ready() -> void:
+	emit_signal("health_changed", health)
 
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
@@ -29,11 +34,10 @@ func _process(delta: float) -> void:
 		
 	position += velocity * delta
 
+func _on_health_potion_pick_up(heal: Variant) -> void:
+	health = min(max_health, health + heal)
+	emit_signal("health_changed", health)
 
-
-func _on_area_entered(area: Area2D) -> void:
-	var groups = area.get_groups()
-	if groups.has("healthPotion"):
-		print_debug("heal")
-	if groups.has("posionPotion"):
-		print_debug("posion")
+func _on_posion_potion_posion_player(damage: Variant) -> void:
+	health = max(0, health - damage)
+	emit_signal("health_changed", health)
