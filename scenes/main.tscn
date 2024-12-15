@@ -13,7 +13,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(287, 185)
+position = Vector2(522, 150)
 
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
 position = Vector2(242, 385)

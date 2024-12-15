@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cog6hj0auvqlv" path="res://assets/Негр стоит-Sheet.png" id="6_tny1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcdjo"]
-size = Vector2(96.125, 142)
+size = Vector2(71, 191)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn1uk"]
 atlas = ExtResource("2_mtb6e")
@@ -224,11 +224,11 @@ animations = [{
 script = ExtResource("1_h6h1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48, 46)
+position = Vector2(49.5, 47.5)
 shape = SubResource("RectangleShape2D_bcdjo")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(41, 36)
 sprite_frames = SubResource("SpriteFrames_j5jv7")
-animation = &"move down"
+animation = &"stay"

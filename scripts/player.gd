@@ -1,9 +1,11 @@
 extends Area2D
 
 const SPEED = 300.0
+var health = 100
 
 signal hit
 @onready var animated_sprite = $AnimatedSprite2D
+
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 	
@@ -22,14 +24,11 @@ func _process(delta: float) -> void:
 	else: 
 		animated_sprite.play("stay")
 	
-		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
 		
-	
-	
-	
 	position += velocity * delta
+
 
 
 func _on_area_entered(area: Area2D) -> void:
