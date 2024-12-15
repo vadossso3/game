@@ -1,19 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://1hhosigtpgfu"]
+[gd_scene load_steps=5 format=3 uid="uid://1hhosigtpgfu"]
 
-[sub_resource type="Gradient" id="Gradient_xh81b"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_acp47"]
-gradient = SubResource("Gradient_xh81b")
+[ext_resource type="Texture2D" uid="uid://c74xawimjkuaq" path="res://assets/items.png" id="1_crmv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1lg2"]
-size = Vector2(64, 64)
+size = Vector2(48, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68l18"]
+atlas = ExtResource("1_crmv3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svuwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68l18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="HealthPotion" type="Area2D" groups=["healthPotion"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.32, 0.32, 1)
-texture = SubResource("GradientTexture2D_acp47")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_a1lg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_svuwf")
