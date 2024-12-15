@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cog6hj0auvqlv"
-path="res://.godot/imported/Негр стоит-Sheet.png-ea4331c7bc55620a4870128c4edfc0ef.ctex"
+uid="uid://5ujl75be82a6"
+path="res://.godot/imported/Sh_move up.png-f3159f2155d844fb62e2e903f0c7b50f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Негр стоит-Sheet.png"
-dest_files=["res://.godot/imported/Негр стоит-Sheet.png-ea4331c7bc55620a4870128c4edfc0ef.ctex"]
+source_file="res://assets/Sh_move up.png"
+dest_files=["res://.godot/imported/Sh_move up.png-f3159f2155d844fb62e2e903f0c7b50f.ctex"]
 
 [params]
 

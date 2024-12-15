@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckf8u05qx37c2"
-path="res://.godot/imported/Негр налево-Sheet.png-eb644b632beb0ed344877d50ba9699bd.ctex"
+path="res://.godot/imported/Sh_move left.png-780a4546d58808f7a58f03e980b09362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Негр налево-Sheet.png"
-dest_files=["res://.godot/imported/Негр налево-Sheet.png-eb644b632beb0ed344877d50ba9699bd.ctex"]
+source_file="res://assets/Sh_move left.png"
+dest_files=["res://.godot/imported/Sh_move left.png-780a4546d58808f7a58f03e980b09362.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=35 format=3 uid="uid://cw6iolsrxmcc7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_h6h1p"]
-[ext_resource type="Texture2D" uid="uid://drdt0uhd15cm4" path="res://assets/Негр спереди-Sheet.png" id="2_mtb6e"]
-[ext_resource type="Texture2D" uid="uid://ckf8u05qx37c2" path="res://assets/Негр налево-Sheet.png" id="3_f0iv5"]
-[ext_resource type="Texture2D" uid="uid://u3pbhjc4v0ah" path="res://assets/Негр направо-Sheet.png" id="4_4g0gj"]
-[ext_resource type="Texture2D" uid="uid://5ujl75be82a6" path="res://assets/Негр сзади-Sheet.png" id="5_13ahd"]
-[ext_resource type="Texture2D" uid="uid://cog6hj0auvqlv" path="res://assets/Негр стоит-Sheet.png" id="6_tny1q"]
+[ext_resource type="Texture2D" uid="uid://drdt0uhd15cm4" path="res://assets/Sh_move down.png" id="2_mtb6e"]
+[ext_resource type="Texture2D" uid="uid://ckf8u05qx37c2" path="res://assets/Sh_move left.png" id="3_f0iv5"]
+[ext_resource type="Texture2D" uid="uid://u3pbhjc4v0ah" path="res://assets/Sh_move right.png" id="4_4g0gj"]
+[ext_resource type="Texture2D" uid="uid://5ujl75be82a6" path="res://assets/Sh_move up.png" id="5_13ahd"]
+[ext_resource type="Texture2D" uid="uid://cog6hj0auvqlv" path="res://assets/Sh_stand still.png" id="6_tny1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcdjo"]
 size = Vector2(71, 191)
