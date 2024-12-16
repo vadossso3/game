@@ -1,10 +1,32 @@
 extends Area2D
 
-var damage = 20
+@export var damage_per_second: int = 20
+@export var duration: float = 3.0
+
+var timer: Timer
+var elapsed_time: float = 0.0
 
 signal posionPlayer(damage)
 
+func _ready() -> void:
+	timer = $DamageTimer
+	
+func start_poison():
+	timer.start()
+	elapsed_time = 0.0
+
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "Player":
-		emit_signal("posionPlayer", damage)
+		start_poison()
+		
+		#hide poison potion from player
+		$CollisionShape2D.disabled = true
+		hide()
+
+func _on_damage_timer_timeout() -> void:
+	emit_signal("posionPlayer", damage_per_second)
+	elapsed_time += 1.0
+	
+	if elapsed_time >= duration:
+		timer.stop()
 		queue_free()

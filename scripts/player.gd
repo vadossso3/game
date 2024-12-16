@@ -2,7 +2,7 @@ extends Area2D
 
 const SPEED = 300.0
 @export var max_health = 100
-var health = 10
+var health = 100
 
 signal health_changed(health)
 
@@ -12,25 +12,33 @@ func _ready() -> void:
 	emit_signal("health_changed", health)
 
 func _process(delta: float) -> void:
+	_movement_input(delta)
+	
+func _movement_input(delta: float) -> void:
 	var velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
-		animated_sprite.play("move right")
-	elif Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
-		animated_sprite.play("move left")
-	elif Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-		animated_sprite.play("move down")
-	elif Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-		animated_sprite.play("move up")
-	else: 
+	if Input.is_anything_pressed() == false: 
 		animated_sprite.play("stay")
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
+		
+	if velocity.x > 0:
+		animated_sprite.play("move right")
+	elif velocity.x < 0:
+		animated_sprite.play("move left")
+	elif velocity.y < 0:
+		animated_sprite.play("move up")
+	elif velocity.y > 0:
+		animated_sprite.play("move down")
 		
 	position += velocity * delta
 

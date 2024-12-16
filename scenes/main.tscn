@@ -19,14 +19,16 @@ script = ExtResource("2_vsyra")
 material = SubResource("CanvasItemMaterial_0ut3v")
 position = Vector2(192, 203)
 
+[node name="Timer" type="Timer" parent="Player"]
+
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(377, 216)
+position = Vector2(656, 225)
 
 [node name="HealthPotion2" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(467, 217)
+position = Vector2(671, 317)
 
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
-position = Vector2(363, 337)
+position = Vector2(357, 218)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
