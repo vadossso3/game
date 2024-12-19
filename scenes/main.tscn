@@ -16,16 +16,16 @@ script = ExtResource("1_xhp58")
 [node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
 script = ExtResource("2_vsyra")
 
+[node name="Player" parent="." instance=ExtResource("1_7qr8g")]
+material = SubResource("CanvasItemMaterial_0ut3v")
+position = Vector2(174, 151)
+platform_on_leave = 2
+
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
 position = Vector2(534, 182)
 
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
 position = Vector2(533, 116)
-
-[node name="Player" parent="." instance=ExtResource("1_7qr8g")]
-material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(174, 151)
-platform_on_leave = 2
 
 [node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
 position = Vector2(295, 135)

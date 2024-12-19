@@ -9,5 +9,6 @@ func _ready():
 
 func _on_area_entered(body) -> void:
 	if body is CharacterBody2D:
-		emit_signal("healPlayer", heal)
-		queue_free()
+		if body.health != body.max_health:
+			emit_signal("healPlayer", heal)
+			queue_free()
