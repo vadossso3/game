@@ -6,10 +6,6 @@ extends Node2D
 func _ready() -> void:
 	_connectHealthPotions()
 	_connectPosionPotions()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func _connectHealthPotions() -> void:
 	var healthPotions = get_tree().get_nodes_in_group("healthPotion")

@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://scripts/potion/posion_potion.gd" id="1_5mruy"]
 [ext_resource type="Texture2D" uid="uid://c74xawimjkuaq" path="res://assets/items.png" id="1_kutkh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1lg2"]
-size = Vector2(47, 44)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vog4"]
 atlas = ExtResource("1_kutkh")
 region = Rect2(256, 0, 128, 128)
@@ -21,13 +18,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eacmd"]
+size = Vector2(48, 48)
+
 [node name="PosionPotion" type="Area2D" groups=["posionPotion"]]
+collision_mask = 2
+input_pickable = false
 script = ExtResource("1_5mruy")
 damage_per_second = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_a1lg2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, 1)
@@ -35,5 +33,7 @@ sprite_frames = SubResource("SpriteFrames_7mlcs")
 
 [node name="DamageTimer" type="Timer" parent="."]
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eacmd")
+
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

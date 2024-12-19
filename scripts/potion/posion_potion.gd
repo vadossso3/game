@@ -10,18 +10,16 @@ signal posionPlayer(damage)
 
 func _ready() -> void:
 	timer = $DamageTimer
+	body_entered.connect(_on_area_entered)
 	
 func start_poison():
+	hide()
 	timer.start()
 	elapsed_time = 0.0
 
-func _on_area_entered(area: Area2D) -> void:
-	if area.name == "Player":
+func _on_area_entered(body) -> void:
+	if body is CharacterBody2D:
 		start_poison()
-		
-		#hide poison potion from player
-		$CollisionShape2D.disabled = true
-		hide()
 
 func _on_damage_timer_timeout() -> void:
 	emit_signal("posionPlayer", damage_per_second)

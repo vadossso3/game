@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://5ujl75be82a6" path="res://assets/Sh_move up.png" id="5_13ahd"]
 [ext_resource type="Texture2D" uid="uid://cog6hj0auvqlv" path="res://assets/Sh_stand still.png" id="6_tny1q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcdjo"]
-size = Vector2(71, 191)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn1uk"]
 atlas = ExtResource("2_mtb6e")
 region = Rect2(0, 0, 256, 256)
@@ -220,15 +217,22 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Player" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcc7w"]
+size = Vector2(72, 184)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_h6h1p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(49.5, 47.5)
-shape = SubResource("RectangleShape2D_bcdjo")
-metadata/_edit_group_ = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(41, 36)
 sprite_frames = SubResource("SpriteFrames_j5jv7")
 animation = &"move left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_qcc7w")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(64, 0)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
