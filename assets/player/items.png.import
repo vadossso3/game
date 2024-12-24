@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckf8u05qx37c2"
-path="res://.godot/imported/Sh_move left.png-780a4546d58808f7a58f03e980b09362.ctex"
+uid="uid://c74xawimjkuaq"
+path="res://.godot/imported/items.png-de4d30a00f615bfffebf056a84edd224.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sh_move left.png"
-dest_files=["res://.godot/imported/Sh_move left.png-780a4546d58808f7a58f03e980b09362.ctex"]
+source_file="res://assets/player/items.png"
+dest_files=["res://.godot/imported/items.png-de4d30a00f615bfffebf056a84edd224.ctex"]
 
 [params]
 

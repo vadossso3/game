@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://gp0x68vdydxn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm8wv"]
+size = Vector2(272, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsey3"]
+size = Vector2(336, 82)
+
+[node name="Nig1" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -56.0
+offset_right = 136.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.676275, 0.3587, 0.575175, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fm8wv")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-24, 31)
+shape = SubResource("RectangleShape2D_lsey3")
