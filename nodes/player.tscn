@@ -238,21 +238,13 @@ target_position = Vector2(64, 0)
 collision_mask = 12
 collide_with_areas = true
 
-[node name="InteractDialog" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
+[node name="InteractDialog" type="CanvasGroup" parent="."]
+visible = false
+position = Vector2(56, -112)
 
 [node name="ColorRect" type="ColorRect" parent="InteractDialog"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -320.0
-offset_right = -536.0
-offset_bottom = -280.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 40.0
+offset_bottom = 40.0
 color = Color(0.913377, 0.843638, 0.957635, 1)
 metadata/_edit_group_ = true
 
@@ -262,10 +254,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -311.5
-offset_right = -536.0
-offset_bottom = -288.5
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "F"

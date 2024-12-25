@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 const SPEED = 125.0
 @export var max_health = 100
+@export var offset : Vector2 = Vector2(40, -30) # Adjust for desired offset
 var health = 100
 
 signal health_changed(health)
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var interact_dialog = $InteractDialog
 
 var model_width: int
 var model_height: int
@@ -24,14 +26,17 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action") and ray.is_colliding():
-		activete_music_player()
-
-func activete_music_player():
-	if ray.get_collider().is_in_group("music_center"):
-			ray.get_collider().interact()
+		var collider = ray.get_collider()
+		if ray.get_collider().is_in_group("interactable"):
+			collider.interact()
 
 func _physics_process(delta: float) -> void:
 	movement_input(delta)
+	
+	if ray.is_colliding():
+		interact_dialog.visible = true
+	else:
+		interact_dialog.visible = false
 	
 func movement_input(delta: float) -> void:	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
