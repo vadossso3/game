@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 125.0
 @export var max_health = 100
-@export var offset : Vector2 = Vector2(40, -30) # Adjust for desired offset
+@export var offset : Vector2 = Vector2(40, -30)
 var health = 100
 
 signal health_changed(health)
