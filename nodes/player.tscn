@@ -223,7 +223,7 @@ size = Vector2(72, 184)
 [node name="Player" type="CharacterBody2D"]
 process_mode = 1
 collision_layer = 2
-collision_mask = 13
+collision_mask = 29
 script = ExtResource("1_h6h1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -264,5 +264,14 @@ text = "F"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1600
+limit_bottom = 1600
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=11 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="1_7qr8g"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_xhp58"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
 [ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
 [ext_resource type="PackedScene" uid="uid://gp0x68vdydxn" path="res://nodes/persons/nig1.tscn" id="8_lxqoy"]
+[ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/wall.tscn" id="9_pufkl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ut3v"]
 
@@ -28,13 +29,100 @@ position = Vector2(720, 104)
 
 [node name="Nig1" parent="." instance=ExtResource("8_lxqoy")]
 process_mode = 3
-position = Vector2(408, 104)
+position = Vector2(424, 192)
 collision_layer = 12
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(174, 151)
+position = Vector2(160, 192)
 platform_on_leave = 2
-platform_floor_layers = 4294901760
+platform_floor_layers = 4294967280
+platform_wall_layers = 255
+
+[node name="Walls" type="CanvasGroup" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(32, 32)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(32, 288)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(32, 544)
+
+[node name="Wall22" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(32, 800)
+
+[node name="Wall23" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(32, 1056)
+
+[node name="Wall24" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(32, 1312)
+
+[node name="Wall10" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1568, 96)
+
+[node name="Wall11" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1568, 352)
+
+[node name="Wall12" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1568, 608)
+
+[node name="Wall13" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1568, 864)
+
+[node name="Wall14" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1568, 1120)
+
+[node name="Wall15" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1568, 1376)
+
+[node name="Wall16" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1504, 1568)
+rotation = 1.57079
+
+[node name="Wall17" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(992, 1568)
+rotation = 1.57079
+
+[node name="Wall18" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1248, 1568)
+rotation = 1.57079
+
+[node name="Wall19" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(736, 1568)
+rotation = 1.57079
+
+[node name="Wall20" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(224, 1568)
+rotation = 1.57079
+
+[node name="Wall21" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(480, 1568)
+rotation = 1.57079
+
+[node name="Wall4" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(96, 32)
+rotation = -1.57079
+
+[node name="Wall5" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(352, 32)
+rotation = -1.57079
+
+[node name="Wall6" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(608, 32)
+rotation = -1.57079
+
+[node name="Wall7" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(864, 32)
+rotation = -1.57079
+
+[node name="Wall8" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1120, 32)
+rotation = -1.57079
+
+[node name="Wall9" parent="Walls" instance=ExtResource("9_pufkl")]
+position = Vector2(1376, 32)
+rotation = -1.57079
 
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
