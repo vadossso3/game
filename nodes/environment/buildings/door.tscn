@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsg5gp8itw7uy"]
+
+[ext_resource type="Script" path="res://scripts/environment/buildings/door.gd" id="1_cut6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sur42"]
+size = Vector2(96, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdmhv"]
+size = Vector2(96, 16)
+
+[node name="Door" type="Area2D" groups=["interactable"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_cut6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(48, 24)
+shape = SubResource("RectangleShape2D_sur42")
+
+[node name="DoorStatic" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorStatic"]
+position = Vector2(48, 8)
+shape = SubResource("RectangleShape2D_pdmhv")
+
+[node name="ColorRect" type="ColorRect" parent="DoorStatic"]
+offset_right = 96.0
+offset_bottom = 16.0
+color = Color(0.341061, 0.188509, 0, 1)
