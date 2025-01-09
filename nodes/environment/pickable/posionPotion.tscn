@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2er2u8a3td4p"]
+[gd_scene load_steps=10 format=3 uid="uid://c2er2u8a3td4p"]
 
 [ext_resource type="Script" path="res://scripts/potion/posion_potion.gd" id="1_5mruy"]
 [ext_resource type="Texture2D" uid="uid://c74xawimjkuaq" path="res://assets/player/items.png" id="1_kutkh"]
+[ext_resource type="AudioStream" uid="uid://cxkgkawrb1lcp" path="res://assets/sounds/pop-music.wav" id="3_2r2yu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vog4"]
 atlas = ExtResource("1_kutkh")
@@ -21,11 +22,109 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eacmd"]
 size = Vector2(48, 48)
 
+[sub_resource type="Animation" id="Animation_u76f5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickUpSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.214132),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7udpd"]
+resource_name = "pickup"
+length = 3.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickUpSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.0305903),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.12968),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bb5ul"]
+_data = {
+"RESET": SubResource("Animation_u76f5"),
+"pickup": SubResource("Animation_7udpd")
+}
+
 [node name="PosionPotion" type="Area2D" groups=["posionPotion"]]
 collision_mask = 2
 input_pickable = false
 script = ExtResource("1_5mruy")
-damage_per_second = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, 1)
@@ -35,5 +134,15 @@ sprite_frames = SubResource("SpriteFrames_7mlcs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eacmd")
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2r2yu")
+bus = &"SFX"
+playback_type = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bb5ul")
+}
 
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

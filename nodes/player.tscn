@@ -218,7 +218,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcc7w"]
-size = Vector2(72, 184)
+size = Vector2(68, 80)
 
 [node name="Player" type="CharacterBody2D"]
 process_mode = 1
@@ -227,11 +227,12 @@ collision_mask = 29
 script = ExtResource("1_h6h1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, -6)
 sprite_frames = SubResource("SpriteFrames_j5jv7")
-animation = &"move left"
+animation = &"stay"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 4)
+position = Vector2(2, 58)
 shape = SubResource("RectangleShape2D_qcc7w")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

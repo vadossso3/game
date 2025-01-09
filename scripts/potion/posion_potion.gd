@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var damage_per_second: int = 20
+@export var damage_per_second: int = 10
 @export var duration: float = 3.0
 
 var timer: Timer
