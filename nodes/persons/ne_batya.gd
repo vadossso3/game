@@ -7,7 +7,7 @@ var resource
 
 func _ready() -> void:
 	animated_sprite.play("chill")
-	resource = load("res://assets/dialogs/batya.dialogue")
+	resource = load("res://assets/dialogs/ne_batya.dialogue")
 
 func _on_dialog():
 	DialogueManager.show_dialogue_balloon(resource)

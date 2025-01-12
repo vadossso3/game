@@ -232,7 +232,7 @@ sprite_frames = SubResource("SpriteFrames_j5jv7")
 animation = &"stay"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 58)
+position = Vector2(0, 58)
 shape = SubResource("RectangleShape2D_qcc7w")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -267,6 +267,7 @@ vertical_alignment = 1
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 limit_left = 0
 limit_top = 0
 limit_right = 1600

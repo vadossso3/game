@@ -1,26 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://b37c1atjxp664"]
+[gd_scene load_steps=10 format=3 uid="uid://bgd26sr5mfuyr"]
 
-[ext_resource type="Texture2D" uid="uid://d1y6k61gyrs7s" path="res://assets/homie/homie.png" id="1_efu12"]
-[ext_resource type="Script" path="res://scripts/persons/batya.gd" id="1_yngpe"]
+[ext_resource type="Script" path="res://nodes/persons/ne_batya.gd" id="1_xrk5s"]
+[ext_resource type="Texture2D" uid="uid://d1y6k61gyrs7s" path="res://assets/homie/homie.png" id="2_agx3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmfsn"]
-atlas = ExtResource("1_efu12")
+atlas = ExtResource("2_agx3a")
 region = Rect2(0, 0, 350, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mn4fa"]
-atlas = ExtResource("1_efu12")
+atlas = ExtResource("2_agx3a")
 region = Rect2(350, 0, 350, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cy4mw"]
-atlas = ExtResource("1_efu12")
+atlas = ExtResource("2_agx3a")
 region = Rect2(700, 0, 350, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ytnk"]
-atlas = ExtResource("1_efu12")
+atlas = ExtResource("2_agx3a")
 region = Rect2(1050, 0, 350, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bh02u"]
-atlas = ExtResource("1_efu12")
+atlas = ExtResource("2_agx3a")
 region = Rect2(1400, 0, 350, 260)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0w3pw"]
@@ -47,19 +47,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6h5w"]
-radius = 128.0
+radius = 50.0
 height = 352.0
 
 [node name="Batya" type="StaticBody2D" groups=["dialog"]]
 collision_layer = 4
-script = ExtResource("1_yngpe")
+script = ExtResource("1_xrk5s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-58.5, -50.5)
+scale = Vector2(0.665714, 0.611538)
 sprite_frames = SubResource("SpriteFrames_0w3pw")
 animation = &"chill"
 frame_progress = 0.278414
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(-59, -74)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n6h5w")
