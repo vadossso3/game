@@ -1,0 +1,11 @@
+~ batya
+Batya: [[Hi|Hello|Howdy]], this is some dialogue.
+Batya: Here are some choices.
+- First one
+	Batya: You picked the first one.
+- Second one
+	Batya: You picked the second one.
+- Start again => batya
+- End the conversation => END
+Batya: For more information see the online documentation.
+=> END

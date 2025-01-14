@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bqila62ubu1ii"
+path="res://.godot/imported/batya.dialogue-785f3b7381f9c4fae89de27be6a5a4bd.tres"
+
+[deps]
+
+source_file="res://assets/dialogs/batya.dialogue"
+dest_files=["res://.godot/imported/batya.dialogue-785f3b7381f9c4fae89de27be6a5a4bd.tres"]
+
+[params]
+
+defaults=true
