@@ -142,7 +142,7 @@ rotation = 1.57079
 position = Vector2(128, 448)
 
 [node name="Batya" parent="." instance=ExtResource("12_equad")]
-position = Vector2(750, 502)
+position = Vector2(1165, 1095)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")

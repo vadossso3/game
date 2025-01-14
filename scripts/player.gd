@@ -4,6 +4,7 @@ const SPEED = 125.0
 @export var max_health = 100
 @export var offset : Vector2 = Vector2(40, -30)
 var health = 100
+var view_direction = "down";
 
 signal health_changed(health)
 
@@ -41,28 +42,39 @@ func _physics_process(delta: float) -> void:
 func movement_input(delta: float) -> void:	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * SPEED
-
-	if Input.is_anything_pressed() == false: 
-		animated_sprite.play("stay")
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
+		if velocity.x > 0:
+			animated_sprite.play("move right")
+			view_direction = "right"
+			ray.target_position = Vector2(model_width * 0.9, 0)
+		elif velocity.x < 0:
+			animated_sprite.play("move left")
+			view_direction = "left"
+			ray.target_position = Vector2(-model_width * 0.9, 0)
+		elif velocity.y < 0:
+			animated_sprite.play("move up")
+			view_direction = "up"
+			ray.target_position = Vector2(0, -model_height * 0.6)
+		elif velocity.y > 0:
+			animated_sprite.play("move down")
+			view_direction = "down"
+			ray.target_position = Vector2(0, +model_height * 0.6)
+			
+		position += velocity * delta
+		move_and_slide()
+	else:
+		if view_direction == "right":
+			animated_sprite.play("stay right")
+		if view_direction == "left":
+			animated_sprite.play("stay left")
+		if view_direction == "up":
+			animated_sprite.play("stay up")
+		if view_direction == "down":
+			animated_sprite.play("stay down")
+			
 
-	if velocity.x > 0:
-		animated_sprite.play("move right")
-		ray.target_position = Vector2(model_width * 0.9, 0)
-	elif velocity.x < 0:
-		animated_sprite.play("move left")
-		ray.target_position = Vector2(-model_width * 0.9, 0)
-	elif velocity.y < 0:
-		animated_sprite.play("move up")
-		ray.target_position = Vector2(0, -model_height * 0.6)
-	elif velocity.y > 0:
-		animated_sprite.play("move down")
-		ray.target_position = Vector2(0, +model_height * 0.6)
-		
-	position += velocity * delta
-	move_and_slide()
 
 func _on_health_potion_pick_up(heal: Variant) -> void:
 	health = min(max_health, health + heal)

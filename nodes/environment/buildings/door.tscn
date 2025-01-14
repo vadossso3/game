@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/environment/buildings/door.gd" id="1_cut6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sur42"]
-size = Vector2(96, 80)
+size = Vector2(96, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdmhv"]
 size = Vector2(96, 16)
@@ -15,7 +15,7 @@ script = ExtResource("1_cut6r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 physics_interpolation_mode = 2
-position = Vector2(48, 24)
+position = Vector2(48, 0.5)
 shape = SubResource("RectangleShape2D_sur42")
 
 [node name="DoorStatic" type="StaticBody2D" parent="."]
