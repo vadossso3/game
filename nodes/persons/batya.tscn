@@ -50,7 +50,8 @@ animations = [{
 radius = 128.0
 height = 352.0
 
-[node name="Batya" type="StaticBody2D"]
+[node name="Batya" type="StaticBody2D" groups=["dialog"]]
+collision_layer = 4
 script = ExtResource("1_yngpe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,27 +1,29 @@
 extends CharacterBody2D
 
-const SPEED = 125.0
 @export var max_health = 100
 @export var offset : Vector2 = Vector2(40, -30)
-var health = 100
-var view_direction = "down";
 
-signal health_changed(health)
+var view_direction = "down";
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interact_dialog = $InteractDialog
 
+const SPEED = 125.0
+
+var health = 100
 var model_width: int
 var model_height: int
 var ray: RayCast2D
+var is_dialog_now = false
 
+signal health_changed(health)
 
 func _ready() -> void:
 	emit_signal("health_changed", health)
 	
 	var size = $CollisionShape2D.shape.size
-	model_width = size[0]
-	model_height = size[1]
+	model_width = size[0] * 1.3
+	model_height = size[1] * 2.5
 	ray = $RayCast2D
 	ray.target_position = Vector2(model_width * 0.9, 0)
 
@@ -30,6 +32,11 @@ func _input(event: InputEvent) -> void:
 		var collider = ray.get_collider()
 		if ray.get_collider().is_in_group("interactable"):
 			collider.interact()
+		if ray.get_collider().is_in_group("dialog"):
+			if !is_dialog_now:
+				collider.emit_signal("dialog")
+				is_dialog_now = true
+				set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
 	movement_input(delta)
@@ -83,3 +90,7 @@ func _on_health_potion_pick_up(heal: Variant) -> void:
 func _on_posion_potion_posion_player(damage: Variant) -> void:
 	health = max(0, health - damage)
 	emit_signal("health_changed", health)
+
+func _on_dialogue_ended(_resource):
+	is_dialog_now = false
+	set_physics_process(true)
