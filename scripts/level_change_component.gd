@@ -1,13 +1,16 @@
 extends Area2D
 
 @export var collision_area: CollisionShape2D
-@export var level_to: PackedScene
+@export var level_to: String
+@export var spawn_point: Marker2D
 
 func _ready() -> void:
 	var scene = get_tree().current_scene.name
+
 	assert(collision_area != null, "Set collision area in scene: " + scene)
-	assert(level_to != null, "Set level to in scene: " + scene)
+	assert(level_to != "", "Set level to in scene: " + scene)
+	assert(spawn_point != null, "Set spawn point in scene: " + scene)
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(_body: Node2D) -> void:
-	get_tree().call_deferred("change_scene_to_packed", level_to)
+	get_tree().call_deferred("change_scene_to_file", level_to)

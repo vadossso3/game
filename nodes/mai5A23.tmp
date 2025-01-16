@@ -151,18 +151,14 @@ position = Vector2(128, 448)
 [node name="Batya" parent="." groups=["dialogable"] instance=ExtResource("12_equad")]
 position = Vector2(701, 389)
 
-[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area", "spawn_point") instance=ExtResource("12_qpaqa")]
+[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
 position = Vector2(448, 24)
 collision_area = NodePath("CollisionShape2D")
-level_to = "res://nodes/levels/level_1.tscn"
-spawn_point = NodePath("Marker2D")
+level_to = "res://nodes/levels/test.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_fmg8e")
-
-[node name="Marker2D" type="Marker2D" parent="LevelChangeComponent"]
-position = Vector2(0, 72)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")

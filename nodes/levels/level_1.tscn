@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dffh86ieepln2"]
+
+[ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/levels/LevelChangeComponent.tscn" id="1_aclrh"]
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="2_xta5l"]
+[ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="3_ud276"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7avl5"]
+size = Vector2(192, 64)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_xta5l")]
+position = Vector2(928, 648)
+
+[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area", "spawn_point") instance=ExtResource("1_aclrh")]
+position = Vector2(568, 616)
+collision_area = NodePath("CollisionShape2D")
+level_to = "res://nodes/main.tscn"
+spawn_point = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
+position = Vector2(360, 184)
+shape = SubResource("RectangleShape2D_7avl5")
+
+[node name="Marker2D" type="Marker2D" parent="LevelChangeComponent"]
+position = Vector2(360, 104)
+
+[node name="Room" type="CanvasGroup" parent="."]
+position = Vector2(1088, 832)
+rotation = 3.14159
+
+[node name="Wall" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(32, 32)
+
+[node name="Wall2" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(32, 288)
+
+[node name="Wall3" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(32, 544)
+
+[node name="Wall4" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(32, 800)
+rotation = -1.57079
+
+[node name="Wall5" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(288, 800)
+rotation = -1.57079
+
+[node name="Wall6" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(544, 800)
+rotation = -1.57079
+
+[node name="Wall7" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(800, 800)
+rotation = -1.57079
+
+[node name="Wall8" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(1056, 736)
+rotation = -3.14159
+
+[node name="Wall11" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(736, 32)
+rotation = 1.5708
+
+[node name="Wall13" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(480, 32)
+rotation = 1.5708
+
+[node name="Wall9" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(1056, 480)
+rotation = -3.14159
+
+[node name="Wall10" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(1056, 224)
+rotation = -3.14159
+
+[node name="Wall12" parent="Room" instance=ExtResource("3_ud276")]
+position = Vector2(992, 32)
+rotation = 1.5708
