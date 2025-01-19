@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var animation_player = $AnimationPlayer
 var heal = 20
 
 signal healPlayer(heal)
@@ -11,4 +12,4 @@ func _on_area_entered(body) -> void:
 	if body is CharacterBody2D:
 		if body.health != body.max_health:
 			emit_signal("healPlayer", heal)
-			queue_free()
+			animation_player.play("pickup")

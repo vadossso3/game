@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="2_vsyra"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
-[ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
+[ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
 [ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
 [ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="9_pufkl"]
 [ext_resource type="PackedScene" uid="uid://b04xyk5ajhccj" path="res://nodes/environment/buildings/brick.tscn" id="10_m8qrm"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b37c1atjxp664" path="res://nodes/persons/batya.tscn" id="12_equad"]
 [ext_resource type="PackedScene" uid="uid://bsg5gp8itw7uy" path="res://nodes/environment/buildings/door.tscn" id="12_l7eqt"]
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/levels/LevelChangeComponent.tscn" id="12_qpaqa"]
-[ext_resource type="PackedScene" uid="uid://bgd26sr5mfuyr" path="res://nodes/persons/ne_batya.tscn" id="13_aq1nv"]
+[ext_resource type="PackedScene" path="res://nodes/persons/ne_batya.tscn" id="13_aq1nv"]
 [ext_resource type="PackedScene" uid="uid://ctjxso22q7bpv" path="res://nodes/levels/test.tscn" id="13_uovm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
@@ -27,11 +27,8 @@ script = ExtResource("1_xhp58")
 [node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
 script = ExtResource("2_vsyra")
 
-[node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
-position = Vector2(953, 203)
-
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(832, 200)
+position = Vector2(530, 285)
 
 [node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
 position = Vector2(596, 118)
@@ -150,7 +147,7 @@ rotation = 1.57079
 position = Vector2(128, 448)
 
 [node name="Batya" parent="." groups=["dialogable"] instance=ExtResource("12_equad")]
-position = Vector2(701, 389)
+position = Vector2(1047, 623)
 
 [node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
 position = Vector2(448, 24)
@@ -169,6 +166,9 @@ platform_floor_layers = 4294967280
 platform_wall_layers = 255
 
 [node name="Batya2" parent="." groups=["dialogable"] instance=ExtResource("13_aq1nv")]
-position = Vector2(772, 681)
+position = Vector2(716, 694)
+
+[node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
+position = Vector2(348, 278)
 
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]

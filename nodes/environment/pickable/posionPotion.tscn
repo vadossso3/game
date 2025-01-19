@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/potion/posion_potion.gd" id="1_5mruy"]
 [ext_resource type="Texture2D" uid="uid://c74xawimjkuaq" path="res://assets/player/items.png" id="1_kutkh"]
-[ext_resource type="AudioStream" uid="uid://cxkgkawrb1lcp" path="res://assets/sounds/pop-music.wav" id="3_2r2yu"]
+[ext_resource type="AudioStream" uid="uid://cdfn51noxhjga" path="res://assets/sounds/popmusic.wav" id="3_s0y7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vog4"]
 atlas = ExtResource("1_kutkh")
@@ -31,7 +31,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.133333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -43,7 +43,7 @@ tracks/1/path = NodePath("CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.133333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -51,11 +51,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PickUpSound:playing")
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(-0.214132),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -71,7 +71,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -83,7 +83,7 @@ tracks/1/path = NodePath("CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -91,11 +91,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PickUpSound:playing")
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(-0.0305903),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -107,7 +107,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.12968),
+"times": PackedFloat32Array(3.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -135,10 +135,8 @@ sprite_frames = SubResource("SpriteFrames_7mlcs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eacmd")
 
-[node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_2r2yu")
-bus = &"SFX"
-playback_type = 2
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s0y7c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
