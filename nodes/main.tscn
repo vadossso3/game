@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="1_7qr8g"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_xhp58"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_xhp58"]
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="2_vsyra"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
@@ -34,6 +34,7 @@ position = Vector2(832, 200)
 
 [node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
 position = Vector2(596, 118)
+collision_layer = 72
 
 [node name="Build" type="CanvasGroup" parent="."]
 
@@ -151,18 +152,14 @@ position = Vector2(128, 448)
 [node name="Batya" parent="." groups=["dialogable"] instance=ExtResource("12_equad")]
 position = Vector2(701, 389)
 
-[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area", "spawn_point") instance=ExtResource("12_qpaqa")]
+[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
 position = Vector2(448, 24)
 collision_area = NodePath("CollisionShape2D")
 level_to = "res://nodes/levels/level_1.tscn"
-spawn_point = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_fmg8e")
-
-[node name="Marker2D" type="Marker2D" parent="LevelChangeComponent"]
-position = Vector2(0, 72)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")
@@ -175,3 +172,4 @@ platform_wall_layers = 255
 position = Vector2(772, 681)
 
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
+[connection signal="ready" from="Player" to="LevelChangeComponent" method="_on_player_ready"]
