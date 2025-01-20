@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctma8fq04avgf"]
+
+[ext_resource type="Script" path="res://scripts/persons/enemy.gd" id="1_mv4jg"]
+[ext_resource type="PackedScene" uid="uid://c02bmdy00pjl7" path="res://nodes/components/health_component.tscn" id="2_6m51a"]
+[ext_resource type="Texture2D" uid="uid://dn6bq0gdliy6s" path="res://assets/objects/sigare.png" id="3_um80m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hi00j"]
+size = Vector2(48, 51.5173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro2kk"]
+size = Vector2(30, 37)
+
+[node name="Enemy" type="RigidBody2D" node_paths=PackedStringArray("delay_timer") groups=["enemy"]]
+collision_layer = 32
+collision_mask = 2
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+custom_integrator = true
+script = ExtResource("1_mv4jg")
+speed = 150
+delay_timer = NodePath("DelayTimer")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_6m51a")]
+
+[node name="DelayTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.08616e-07, 1.5)
+scale = Vector2(0.0348837, 0.0463659)
+texture = ExtResource("3_um80m")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -1.19209e-06)
+scale = Vector2(1, 1.2423)
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9.59583e-07)
+shape = SubResource("RectangleShape2D_hi00j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ro2kk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

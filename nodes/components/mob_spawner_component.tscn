@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbkgob1lv0qe6"]
+
+[ext_resource type="Script" path="res://scripts/components/mob_spawner_component.gd" id="1_ry6g3"]
+[ext_resource type="Texture2D" uid="uid://dnwd7l7jksnqd" path="res://assets/objects/barrel.png" id="2_eif6j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s21nv"]
+radius = 96.1538
+height = 258.14
+
+[node name="MobSpawnerComponent" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_ry6g3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.26, 0.286667)
+texture = ExtResource("2_eif6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.26, 0.286667)
+shape = SubResource("CapsuleShape2D_s21nv")
