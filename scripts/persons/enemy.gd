@@ -40,7 +40,7 @@ func _toggle_movement():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		_toggle_movement()
-		health.emit_signal("hit", 20)
+		health.emit_signal("deal_damage", 20)
 		
 func _on_dead():
 	queue_free()

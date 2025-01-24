@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_s0est"]
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="2_xta5l"]
 [ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="3_ud276"]
-[ext_resource type="PackedScene" path="res://nodes/persons/enemy.tscn" id="5_amslw"]
+[ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="5_amslw"]
 [ext_resource type="PackedScene" uid="uid://dbkgob1lv0qe6" path="res://nodes/components/mob_spawner_component.tscn" id="5_pkyau"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8plj"]
@@ -17,9 +17,10 @@ size = Vector2(192, 64)
 script = ExtResource("1_s0est")
 
 [node name="MobSpawnerComponent" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("5_pkyau")]
-position = Vector2(224, 256)
+position = Vector2(392, 392)
 spawn_place = NodePath("Spawn area/CollisionShape2D2")
-spawn_mob = ExtResource("5_amslw")
+mob = ExtResource("5_amslw")
+mob_group = "enemy"
 metadata/_edit_group_ = true
 
 [node name="Spawn area" type="Area2D" parent="MobSpawnerComponent"]

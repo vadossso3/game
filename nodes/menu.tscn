@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://xii87qe0wdi4"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_btcfq"]
+[ext_resource type="AudioStream" uid="uid://b5c5dfyy3ky4o" path="res://assets/music/song_1.mp3" id="2_legn5"]
+[ext_resource type="Texture2D" uid="uid://buwpo5bnekjdy" path="res://assets/menu_bg.jpg" id="3_6mllr"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_btcfq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -376.0
+offset_right = 843.0
+offset_bottom = 548.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6mllr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.78
+offset_top = -73.4825
+offset_right = 128.78
+offset_bottom = 73.4825
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.57
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_legn5")
+autoplay = true

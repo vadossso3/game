@@ -3,20 +3,14 @@ extends Node
 @export var health: int = 100
 
 
-signal hit(damage: int)
-signal heal(heal: int)
+signal deal_damage(damage: int)
+signal restore_health(heal: int)
 signal dead
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hit.connect(_on_hit)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	deal_damage.connect(_dial_damage)
 	
-func _on_hit(hit):
+func _dial_damage(hit):
 	health -= hit
 	
 	if health <= 0:
