@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://do5gknkttt15d"]
+
+[ext_resource type="Texture2D" uid="uid://dcr1n5xi8ll8q" path="res://assets/homie/lil_niga.png" id="1_mwhht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykh08"]
+atlas = ExtResource("1_mwhht")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dybp"]
+atlas = ExtResource("1_mwhht")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_862f1"]
+atlas = ExtResource("1_mwhht")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k6oo"]
+atlas = ExtResource("1_mwhht")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7regh"]
+atlas = ExtResource("1_mwhht")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3xyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykh08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dybp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_862f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k6oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7regh")
+}],
+"loop": true,
+"name": &"chill",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf5ka"]
+size = Vector2(85.25, 243.5)
+
+[node name="Lil_nigga" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, -50)
+scale = Vector2(1.73047, 1.73047)
+sprite_frames = SubResource("SpriteFrames_g3xyn")
+animation = &"chill"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.625, 28.75)
+shape = SubResource("RectangleShape2D_lf5ka")
