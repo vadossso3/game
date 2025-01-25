@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=19 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="1_7qr8g"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xhp58"]
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="2_vsyra"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
-[ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
+[ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
 [ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
 [ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="9_pufkl"]
 [ext_resource type="PackedScene" uid="uid://b04xyk5ajhccj" path="res://nodes/environment/buildings/brick.tscn" id="10_m8qrm"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://b37c1atjxp664" path="res://nodes/persons/batya.tscn" id="12_equad"]
 [ext_resource type="PackedScene" uid="uid://bsg5gp8itw7uy" path="res://nodes/environment/buildings/door.tscn" id="12_l7eqt"]
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/levels/LevelChangeComponent.tscn" id="12_qpaqa"]
+[ext_resource type="PackedScene" path="res://nodes/persons/ne_batya.tscn" id="13_aq1nv"]
+[ext_resource type="PackedScene" uid="uid://do5gknkttt15d" path="res://nodes/persons/lil_nigga.tscn" id="15_70rhs"]
+[ext_resource type="Script" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
 size = Vector2(128, 56)
@@ -26,7 +29,7 @@ script = ExtResource("1_xhp58")
 script = ExtResource("2_vsyra")
 
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(530, 285)
+position = Vector2(159, 154)
 
 [node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
 position = Vector2(596, 118)
@@ -146,7 +149,7 @@ rotation = 1.57079
 position = Vector2(128, 448)
 
 [node name="Batya" parent="." groups=["dialogable"] instance=ExtResource("12_equad")]
-position = Vector2(1047, 623)
+position = Vector2(1047, 482)
 
 [node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
 position = Vector2(448, 24)
@@ -159,13 +162,17 @@ shape = SubResource("RectangleShape2D_fmg8e")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(448, 56)
+position = Vector2(423, 231)
 platform_on_leave = 2
 platform_floor_layers = 4294967280
 platform_wall_layers = 255
 
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
-position = Vector2(348, 278)
+position = Vector2(308, 141)
+
+[node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
+position = Vector2(828, 172)
+script = ExtResource("16_vy51l")
 
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
 [connection signal="ready" from="Player" to="LevelChangeComponent" method="_on_player_ready"]

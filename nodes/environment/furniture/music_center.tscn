@@ -235,7 +235,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckvrr"]
-size = Vector2(80, 48)
+size = Vector2(113, 68)
 
 [node name="MusicCenter" type="StaticBody2D" groups=["interactable", "music_center"]]
 collision_layer = 8
@@ -243,11 +243,12 @@ collision_mask = 0
 script = ExtResource("1_ww4rr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, -43)
+scale = Vector2(1.41797, 1.41797)
 sprite_frames = SubResource("SpriteFrames_hwyq1")
 animation = &"playing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, 30)
 shape = SubResource("RectangleShape2D_ckvrr")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
