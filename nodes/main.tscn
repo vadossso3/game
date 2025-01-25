@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=16 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="1_7qr8g"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xhp58"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://b37c1atjxp664" path="res://nodes/persons/batya.tscn" id="12_equad"]
 [ext_resource type="PackedScene" uid="uid://bsg5gp8itw7uy" path="res://nodes/environment/buildings/door.tscn" id="12_l7eqt"]
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/levels/LevelChangeComponent.tscn" id="12_qpaqa"]
-[ext_resource type="PackedScene" uid="uid://bgd26sr5mfuyr" path="res://nodes/persons/ne_batya.tscn" id="13_aq1nv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
 size = Vector2(128, 56)
@@ -164,9 +163,6 @@ position = Vector2(448, 56)
 platform_on_leave = 2
 platform_floor_layers = 4294967280
 platform_wall_layers = 255
-
-[node name="Batya2" parent="." groups=["dialogable"] instance=ExtResource("13_aq1nv")]
-position = Vector2(716, 694)
 
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
 position = Vector2(348, 278)

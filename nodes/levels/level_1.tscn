@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/levels/LevelChangeComponent.tscn" id="1_aclrh"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_s0est"]
-[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="2_xta5l"]
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="2_xta5l"]
 [ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="3_ud276"]
 [ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="5_amslw"]
 [ext_resource type="PackedScene" uid="uid://dbkgob1lv0qe6" path="res://nodes/components/mob_spawner_component.tscn" id="5_pkyau"]

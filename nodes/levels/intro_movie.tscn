@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://lgg76lrj70kp"]
+
+[ext_resource type="Script" path="res://scripts/intro_movie.gd" id="1_34qyl"]
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="1_g6st6"]
+
+[sub_resource type="Animation" id="Animation_a65c7"]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-584, 584), Vector2(608, 584)]
+}
+
+[sub_resource type="Animation" id="Animation_c2txh"]
+resource_name = "intro"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-592, 584), Vector2(600, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-584, 584), Vector2(608, 584)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpnm5"]
+_data = {
+"RESET": SubResource("Animation_a65c7"),
+"intro": SubResource("Animation_c2txh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxcj4"]
+size = Vector2(930, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifjwh"]
+size = Vector2(20, 202)
+
+[node name="Movie" type="Node2D"]
+script = ExtResource("1_34qyl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wpnm5")
+}
+
+[node name="Player" parent="." instance=ExtResource("1_g6st6")]
+position = Vector2(-584, 584)
+
+[node name="Bus" type="RigidBody2D" parent="."]
+position = Vector2(-592, 584)
+lock_rotation = true
+freeze = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bus"]
+shape = SubResource("RectangleShape2D_pxcj4")
+
+[node name="Camera2D" type="Camera2D" parent="Bus"]
+
+[node name="Sprite2D" type="ColorRect" parent="Bus"]
+offset_left = -464.0
+offset_top = -120.0
+offset_right = 464.0
+offset_bottom = 120.0
+
+[node name="line" type="StaticBody2D" parent="."]
+position = Vector2(-904, 328)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="line"]
+shape = SubResource("RectangleShape2D_ifjwh")
