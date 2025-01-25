@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcr1n5xi8ll8q"
-path="res://.godot/imported/lil_niga.png-7b8f9db6cffab6ea4c33549d871dd225.ctex"
+uid="uid://dlxk0wycdfw0j"
+path="res://.godot/imported/brick.png-fd12329b93210b5b4a03ecd040d3a9d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/homie/lil_niga.png"
-dest_files=["res://.godot/imported/lil_niga.png-7b8f9db6cffab6ea4c33549d871dd225.ctex"]
+source_file="res://assets/objects/brick.png"
+dest_files=["res://.godot/imported/brick.png-fd12329b93210b5b4a03ecd040d3a9d4.ctex"]
 
 [params]
 

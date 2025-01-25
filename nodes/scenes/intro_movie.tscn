@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://lgg76lrj70kp"]
 
-[ext_resource type="Script" path="res://scripts/intro_movie.gd" id="1_34qyl"]
-[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/player.tscn" id="1_g6st6"]
+[ext_resource type="Script" path="res://scripts/scenes/intro_movie.gd" id="1_34qyl"]
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_g6st6"]
 
 [sub_resource type="Animation" id="Animation_a65c7"]
 length = 5.0

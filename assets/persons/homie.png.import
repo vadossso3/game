@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1y6k61gyrs7s"
-path="res://.godot/imported/homie.png-c0903b2048862b0a80cbaaa26407c5b5.ctex"
+path="res://.godot/imported/homie.png-af8086164652b13a112867da4704e58a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/homie/homie.png"
-dest_files=["res://.godot/imported/homie.png-c0903b2048862b0a80cbaaa26407c5b5.ctex"]
+source_file="res://assets/persons/homie.png"
+dest_files=["res://.godot/imported/homie.png-af8086164652b13a112867da4704e58a.ctex"]
 
 [params]
 

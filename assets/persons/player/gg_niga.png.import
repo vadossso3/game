@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cog6hj0auvqlv"
-path="res://.godot/imported/Sh_stand still.png-f1460a8e5f486ac7ddbb999b9d6cd966.ctex"
+uid="uid://j88did6hu6do"
+path="res://.godot/imported/gg_niga.png-12193bcae62596ec44797b197e2237a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Sh_stand still.png"
-dest_files=["res://.godot/imported/Sh_stand still.png-f1460a8e5f486ac7ddbb999b9d6cd966.ctex"]
+source_file="res://assets/persons/player/gg_niga.png"
+dest_files=["res://.godot/imported/gg_niga.png-12193bcae62596ec44797b197e2237a2.ctex"]
 
 [params]
 

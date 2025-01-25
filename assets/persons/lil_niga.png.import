@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drdt0uhd15cm4"
-path="res://.godot/imported/Sh_move down.png-1c1a51b8be9df91d34b723af66765754.ctex"
+uid="uid://dcr1n5xi8ll8q"
+path="res://.godot/imported/lil_niga.png-cdb32162ffa6716ba34aa9ac1dabb367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Sh_move down.png"
-dest_files=["res://.godot/imported/Sh_move down.png-1c1a51b8be9df91d34b723af66765754.ctex"]
+source_file="res://assets/persons/lil_niga.png"
+dest_files=["res://.godot/imported/lil_niga.png-cdb32162ffa6716ba34aa9ac1dabb367.ctex"]
 
 [params]
 

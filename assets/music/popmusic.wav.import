@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c28k3lgkcboid"
-path="res://.godot/imported/chicken.wav-60783fc5afc87c9d77a82ac9dbdae2f2.sample"
+uid="uid://cdfn51noxhjga"
+path="res://.godot/imported/popmusic.wav-8fe246749388aea3e8c96304b9b80557.sample"
 
 [deps]
 
-source_file="res://assets/sounds/chicken.wav"
-dest_files=["res://.godot/imported/chicken.wav-60783fc5afc87c9d77a82ac9dbdae2f2.sample"]
+source_file="res://assets/music/popmusic.wav"
+dest_files=["res://.godot/imported/popmusic.wav-8fe246749388aea3e8c96304b9b80557.sample"]
 
 [params]
 

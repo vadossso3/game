@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ujl75be82a6"
-path="res://.godot/imported/Sh_move up.png-9a336e2601e0b2de23e505d44ffc205f.ctex"
+uid="uid://drdt0uhd15cm4"
+path="res://.godot/imported/Sh_move down.png-f682f01142fa3651e37a8ea161623786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Sh_move up.png"
-dest_files=["res://.godot/imported/Sh_move up.png-9a336e2601e0b2de23e505d44ffc205f.ctex"]
+source_file="res://assets/persons/player/Sh_move down.png"
+dest_files=["res://.godot/imported/Sh_move down.png-f682f01142fa3651e37a8ea161623786.ctex"]
 
 [params]
 

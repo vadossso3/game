@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j88did6hu6do"
-path="res://.godot/imported/gg_niga.png-4d02db4c4a6e7d10aae3b85d6802d3f4.ctex"
+uid="uid://u3pbhjc4v0ah"
+path="res://.godot/imported/Sh_move right.png-7e6c2bcfb70cc214f841a2ec8750f8ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/gg_niga.png"
-dest_files=["res://.godot/imported/gg_niga.png-4d02db4c4a6e7d10aae3b85d6802d3f4.ctex"]
+source_file="res://assets/persons/player/Sh_move right.png"
+dest_files=["res://.godot/imported/Sh_move right.png-7e6c2bcfb70cc214f841a2ec8750f8ea.ctex"]
 
 [params]
 

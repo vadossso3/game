@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://xii87qe0wdi4"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_btcfq"]
+[ext_resource type="Script" path="res://scripts/scenes/menu.gd" id="1_btcfq"]
 [ext_resource type="AudioStream" uid="uid://b5c5dfyy3ky4o" path="res://assets/music/song_1.mp3" id="2_legn5"]
-[ext_resource type="Texture2D" uid="uid://buwpo5bnekjdy" path="res://assets/menu_bg.jpg" id="3_6mllr"]
+[ext_resource type="Texture2D" uid="uid://buwpo5bnekjdy" path="res://assets/ui/menu_bg.jpg" id="3_6mllr"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rtfpwgpi0rbn"
-path="res://.godot/imported/Sh_stand still right.png-2e644230ddcb64dc0ae96246cab7d0d5.ctex"
+uid="uid://3lmjgm4a47xo"
+path="res://.godot/imported/Sh_stand still up.png-0d54577eb82fee5c2b41a29899a65e1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Sh_stand still right.png"
-dest_files=["res://.godot/imported/Sh_stand still right.png-2e644230ddcb64dc0ae96246cab7d0d5.ctex"]
+source_file="res://assets/persons/player/Sh_stand still up.png"
+dest_files=["res://.godot/imported/Sh_stand still up.png-0d54577eb82fee5c2b41a29899a65e1f.ctex"]
 
 [params]
 
