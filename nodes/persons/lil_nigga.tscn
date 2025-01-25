@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://do5gknkttt15d"]
+[gd_scene load_steps=9 format=3 uid="uid://oqlb6p3nw4kq"]
 
 [ext_resource type="Texture2D" uid="uid://dcr1n5xi8ll8q" path="res://assets/homie/lil_niga.png" id="1_mwhht"]
 
@@ -49,6 +49,8 @@ animations = [{
 size = Vector2(85.25, 243.5)
 
 [node name="Lil_nigga" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(28, -50)
