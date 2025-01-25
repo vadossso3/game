@@ -161,7 +161,7 @@ shape = SubResource("RectangleShape2D_fmg8e")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
 material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(440, 160)
+position = Vector2(808, 1392)
 platform_on_leave = 2
 platform_floor_layers = 4294967280
 platform_wall_layers = 255

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c2er2u8a3td4p"]
 
-[ext_resource type="Script" path="res://scripts/potion/posion_potion.gd" id="1_5mruy"]
+[ext_resource type="Script" path="res://scripts/environment/pickable/posion_potion.gd" id="1_5mruy"]
 [ext_resource type="Texture2D" uid="uid://c74xawimjkuaq" path="res://assets/persons/player/items.png" id="1_kutkh"]
 [ext_resource type="AudioStream" uid="uid://cdfn51noxhjga" path="res://assets/music/popmusic.wav" id="3_s0y7c"]
 
