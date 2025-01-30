@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1fxa27wnpgpk"]
+
+[ext_resource type="Script" path="res://scripts/components/text_area_component.gd" id="1_kb8vq"]
+
+[node name="TextAreaComponent" type="Area2D" groups=["dialogable"]]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_kb8vq")
+interact_type = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

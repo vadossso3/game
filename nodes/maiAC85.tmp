@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=18 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_7qr8g"]
 [ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_xhp58"]
@@ -15,30 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="12_qpaqa"]
 [ext_resource type="PackedScene" uid="uid://oqlb6p3nw4kq" path="res://nodes/persons/lil_nigga.tscn" id="15_70rhs"]
 [ext_resource type="Script" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
-[ext_resource type="PackedScene" uid="uid://c1fxa27wnpgpk" path="res://nodes/components/text_area_component.tscn" id="17_w7pad"]
-[ext_resource type="PackedScene" uid="uid://lbqxi2p66l68" path="res://nodes/environment/furniture/fridge.tscn" id="18_ocv2c"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ut3v"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8gsv"]
-radius = 149.0
-height = 386.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
 size = Vector2(128, 56)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tadue"]
-size = Vector2(112, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqn70"]
-size = Vector2(170, 106)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq78s"]
-size = Vector2(113, 114)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ut3v"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xhp58")
-resourse_path = "res://assets/dialogs/main.dialogue"
 
 [node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
 script = ExtResource("2_vsyra")
@@ -49,14 +33,6 @@ position = Vector2(159, 154)
 [node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
 position = Vector2(596, 118)
 collision_layer = 72
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
-material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(176, 304)
-collision_mask = 125
-platform_on_leave = 2
-platform_floor_layers = 4294967280
-platform_wall_layers = 255
 
 [node name="Build" type="CanvasGroup" parent="."]
 
@@ -171,19 +147,8 @@ rotation = 1.57079
 [node name="Door" parent="." instance=ExtResource("12_l7eqt")]
 position = Vector2(128, 448)
 
-[node name="Batya" parent="." instance=ExtResource("12_equad")]
-position = Vector2(936, 504)
-
-[node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-text_area = NodePath("CollisionShape2D")
-dialogue_title = "batya"
-one_time = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Batya/TextAreaComponent"]
-position = Vector2(2, 1)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_l8gsv")
-debug_color = Color(1, 0, 0.0166664, 0.419608)
+[node name="Batya" parent="." groups=["dialogable"] instance=ExtResource("12_equad")]
+position = Vector2(1047, 482)
 
 [node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
 position = Vector2(448, 24)
@@ -194,44 +159,19 @@ level_to = "res://nodes/scenes/level_1.tscn"
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_fmg8e")
 
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
+material = SubResource("CanvasItemMaterial_0ut3v")
+position = Vector2(808, 1392)
+platform_on_leave = 2
+platform_floor_layers = 4294967280
+platform_wall_layers = 255
+
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
 position = Vector2(308, 141)
 
 [node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
 position = Vector2(828, 172)
 script = ExtResource("16_vy51l")
-
-[node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-text_area = NodePath("CollisionShape2D")
-dialogue_title = "brother"
-one_time = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lil_nigga/TextAreaComponent"]
-position = Vector2(4, 28)
-shape = SubResource("RectangleShape2D_tadue")
-debug_color = Color(1, 0, 0.0166664, 0.419608)
-
-[node name="TextAreaComponent" parent="." node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-position = Vector2(816, 1440)
-text_area = NodePath("CollisionShape2D")
-dialogue_title = "from_school_1"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextAreaComponent"]
-shape = SubResource("RectangleShape2D_hqn70")
-
-[node name="Fridge" parent="." instance=ExtResource("18_ocv2c")]
-position = Vector2(1456, 424)
-
-[node name="TextAreaComponent2" parent="Fridge" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-position = Vector2(-112, 24)
-text_area = NodePath("CollisionShape2D")
-dialogue_title = "fridge"
-one_time = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/TextAreaComponent2"]
-shape = SubResource("RectangleShape2D_pq78s")
-debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
 [connection signal="ready" from="Player" to="LevelChangeComponent" method="_on_player_ready"]

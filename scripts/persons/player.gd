@@ -3,8 +3,6 @@ extends CharacterBody2D
 @export var max_health = 100
 @export var offset : Vector2 = Vector2(40, -30)
 
-var view_direction = "down";
-
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interact_dialog = $InteractDialog
 
@@ -13,39 +11,17 @@ const SPEED = 125.0
 var health = 100
 var model_width: int
 var model_height: int
-var ray: RayCast2D
 var is_dialog_now = false
+var view_direction = "down"
 
 signal health_changed(health)
 
 func _ready() -> void:
 	emit_signal("health_changed", health)
-	
-	var size = $CollisionShape2D.shape.size
-	model_width = size[0] * 1.3
-	model_height = size[1] * 2.5
-	ray = $RayCast2D
-	ray.target_position = Vector2(model_width * 0.9, 0)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action") and ray.is_colliding():
-		var collider = ray.get_collider()
-		if ray.get_collider().is_in_group("interactable"):
-			collider.interact()
-		if ray.get_collider().is_in_group("dialog"):
-			if !is_dialog_now:
-				collider.emit_signal("dialog")
-				is_dialog_now = true
-				set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
 	movement_input(delta)
-	
-	if ray.is_colliding():
-		interact_dialog.visible = true
-	else:
-		interact_dialog.visible = false
-	
+
 func movement_input(delta: float) -> void:	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * SPEED
@@ -55,19 +31,15 @@ func movement_input(delta: float) -> void:
 		if velocity.x > 0:
 			animated_sprite.play("move right")
 			view_direction = "right"
-			ray.target_position = Vector2(model_width * 0.9, 0)
 		elif velocity.x < 0:
 			animated_sprite.play("move left")
 			view_direction = "left"
-			ray.target_position = Vector2(-model_width * 0.9, 0)
 		elif velocity.y < 0:
 			animated_sprite.play("move up")
 			view_direction = "up"
-			ray.target_position = Vector2(0, -model_height * 0.6)
 		elif velocity.y > 0:
 			animated_sprite.play("move down")
 			view_direction = "down"
-			ray.target_position = Vector2(0, +model_height * 0.6)
 			
 		position += velocity * delta
 		move_and_slide()
@@ -90,6 +62,17 @@ func _on_health_potion_pick_up(heal: Variant) -> void:
 func _on_posion_potion_posion_player(damage: Variant) -> void:
 	health = max(0, health - damage)
 	emit_signal("health_changed", health)
+
+func _stop_movement(_resource):
+	set_physics_process(false)
+	if view_direction == "right":
+		animated_sprite.play("stay right")
+	if view_direction == "left":
+		animated_sprite.play("stay left")
+	if view_direction == "up":
+		animated_sprite.play("stay up")
+	if view_direction == "down":
+		animated_sprite.play("stay down")
 
 func _on_dialogue_ended(_resource):
 	is_dialog_now = false

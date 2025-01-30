@@ -353,7 +353,7 @@ size = Vector2(95, 131)
 [node name="Player" type="CharacterBody2D"]
 process_mode = 1
 collision_layer = 2
-collision_mask = 61
+collision_mask = 30717
 script = ExtResource("1_h6h1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -366,11 +366,6 @@ frame_progress = 0.68938
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12.5, 32.5)
 shape = SubResource("RectangleShape2D_qcc7w")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(64, 0)
-collision_mask = 12
-collide_with_areas = true
 
 [node name="InteractDialog" type="CanvasGroup" parent="."]
 visible = false
