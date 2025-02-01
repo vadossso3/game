@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal health_changed(health)
+signal can_interact(status)
+
 @export var max_health = 100
 @export var offset : Vector2 = Vector2(40, -30)
 
@@ -14,10 +17,9 @@ var model_height: int
 var is_dialog_now = false
 var view_direction = "down"
 
-signal health_changed(health)
-
 func _ready() -> void:
 	emit_signal("health_changed", health)
+	can_interact.connect(_toggle_interact_ui)
 
 func _physics_process(delta: float) -> void:
 	movement_input(delta)
@@ -52,8 +54,6 @@ func movement_input(delta: float) -> void:
 			animated_sprite.play("stay up")
 		if view_direction == "down":
 			animated_sprite.play("stay down")
-			
-
 
 func _on_health_potion_pick_up(heal: Variant) -> void:
 	health = min(max_health, health + heal)
@@ -77,3 +77,6 @@ func _stop_movement(_resource):
 func _on_dialogue_ended(_resource):
 	is_dialog_now = false
 	set_physics_process(true)
+
+func _toggle_interact_ui(status):
+	interact_dialog.visible = status

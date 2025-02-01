@@ -172,7 +172,8 @@ rotation = 1.57079
 position = Vector2(128, 448)
 
 [node name="Batya" parent="." instance=ExtResource("12_equad")]
-position = Vector2(936, 504)
+position = Vector2(880, 632)
+metadata/_edit_group_ = true
 
 [node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 text_area = NodePath("CollisionShape2D")
@@ -215,6 +216,7 @@ debug_color = Color(1, 0, 0.0166664, 0.419608)
 position = Vector2(816, 1440)
 text_area = NodePath("CollisionShape2D")
 dialogue_title = "from_school_1"
+interact_type = 0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextAreaComponent"]

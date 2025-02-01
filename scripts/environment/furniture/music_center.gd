@@ -18,10 +18,12 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		is_player_entered = true
+		body.emit_signal("can_interact", true)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		is_player_entered = false
+		body.emit_signal("can_interact", false)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action") and is_player_entered:
