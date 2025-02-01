@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://db8hib50k7kgt"]
+
+[ext_resource type="Texture2D" uid="uid://d2aan0kwl2ard" path="res://assets/objects/InteriorTilesLITE.png" id="1_nox3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fab7h"]
+atlas = ExtResource("1_nox3n")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxvmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fab7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r35yf"]
+size = Vector2(153, 75)
+
+[node name="Toilet" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_qxvmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 7.5)
+shape = SubResource("RectangleShape2D_r35yf")

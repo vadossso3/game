@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=3 uid="uid://csr5soqr8hixq"]
+
+[ext_resource type="Texture2D" uid="uid://d2aan0kwl2ard" path="res://assets/objects/InteriorTilesLITE.png" id="1_xdhmd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxtc4"]
+atlas = ExtResource("1_xdhmd")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65i4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxtc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vrc3"]
+atlas = ExtResource("1_xdhmd")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ob00u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vrc3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypeyl"]
+atlas = ExtResource("1_xdhmd")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ibybd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypeyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykotu"]
+atlas = ExtResource("1_xdhmd")
+region = Rect2(416, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m76i0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykotu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkour"]
+atlas = ExtResource("1_xdhmd")
+region = Rect2(448, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2ear"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkour")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Carpet" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 320)
+rotation = 3.14159
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_65i4f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_65i4f")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(8.10623e-06, 320)
+rotation = 3.14159
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ob00u")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 5.68434e-14)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ob00u")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 5.96046e-08)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ibybd")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 320)
+rotation = 3.14159
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ibybd")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.84774e-06, 160)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_m76i0")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 160)
+rotation = 3.14159
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_m76i0")
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 160)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_k2ear")

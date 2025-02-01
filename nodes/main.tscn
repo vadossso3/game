@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=30 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_7qr8g"]
 [ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_xhp58"]
@@ -6,20 +6,26 @@
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_vsyra"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
 [ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
+[ext_resource type="PackedScene" uid="uid://csr5soqr8hixq" path="res://nodes/environment/buildings/carpet.tscn" id="6_5ltnv"]
 [ext_resource type="PackedScene" uid="uid://juswnac5ts6r" path="res://nodes/environment/buildings/blue_wall.tscn" id="7_5tmpv"]
+[ext_resource type="PackedScene" uid="uid://4w8fhktyh1va" path="res://nodes/environment/buildings/blue_wall_right.tscn" id="7_06llg"]
 [ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
-[ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="9_pufkl"]
-[ext_resource type="PackedScene" uid="uid://b04xyk5ajhccj" path="res://nodes/environment/buildings/brick.tscn" id="10_m8qrm"]
-[ext_resource type="PackedScene" uid="uid://c0sm3mmc8gvoc" path="res://nodes/environment/buildings/half_brick.tscn" id="11_dc1m5"]
+[ext_resource type="PackedScene" uid="uid://d21v2k1o5dxpu" path="res://nodes/environment/buildings/blue_wall_left.tscn" id="8_ddjsh"]
+[ext_resource type="PackedScene" uid="uid://db8hib50k7kgt" path="res://nodes/environment/buildings/toilet.tscn" id="10_2b4ut"]
+[ext_resource type="PackedScene" uid="uid://cc8l50sklbdnm" path="res://nodes/environment/buildings/bath.tscn" id="11_5jgct"]
+[ext_resource type="PackedScene" uid="uid://y7l5j0wwpf3p" path="res://nodes/environment/buildings/poor_wall.tscn" id="12_62gm0"]
 [ext_resource type="PackedScene" uid="uid://b37c1atjxp664" path="res://nodes/persons/batya.tscn" id="12_equad"]
 [ext_resource type="PackedScene" uid="uid://bsg5gp8itw7uy" path="res://nodes/environment/buildings/door.tscn" id="12_l7eqt"]
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="12_qpaqa"]
+[ext_resource type="PackedScene" uid="uid://cw6cm4fdfa8rv" path="res://nodes/environment/buildings/bathroom_sink.tscn" id="13_hhk1b"]
+[ext_resource type="PackedScene" uid="uid://bu8b5s2eqkddk" path="res://nodes/environment/buildings/orange_wall.tscn" id="14_2qb0b"]
 [ext_resource type="PackedScene" uid="uid://oqlb6p3nw4kq" path="res://nodes/persons/lil_nigga.tscn" id="15_70rhs"]
 [ext_resource type="Script" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
 [ext_resource type="PackedScene" uid="uid://c1fxa27wnpgpk" path="res://nodes/components/text_area_component.tscn" id="17_w7pad"]
 [ext_resource type="PackedScene" uid="uid://lbqxi2p66l68" path="res://nodes/environment/furniture/fridge.tscn" id="18_ocv2c"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ut3v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krv5y"]
+size = Vector2(121, 79)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8gsv"]
 radius = 149.0
@@ -41,14 +47,6 @@ size = Vector2(113, 114)
 script = ExtResource("1_xhp58")
 resourse_path = "res://assets/dialogs/main.dialogue"
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_7qr8g")]
-material = SubResource("CanvasItemMaterial_0ut3v")
-position = Vector2(800, 1240)
-collision_mask = 125
-platform_on_leave = 2
-platform_floor_layers = 4294967280
-platform_wall_layers = 255
-
 [node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
 script = ExtResource("2_vsyra")
 
@@ -61,68 +59,78 @@ collision_layer = 72
 
 [node name="Build" type="CanvasGroup" parent="."]
 
-[node name="Wall" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(32, 32)
-
-[node name="Wall2" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(32, 288)
-
-[node name="Wall3" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(32, 544)
-
-[node name="Wall22" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(32, 800)
-
-[node name="Wall23" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(32, 1056)
-
-[node name="Wall24" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(32, 1312)
-
-[node name="Wall10" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1568, 96)
-
-[node name="Wall11" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1568, 352)
-
-[node name="Wall12" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1568, 608)
-
-[node name="Wall13" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1568, 864)
-
-[node name="Wall14" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1568, 1120)
-
-[node name="Wall15" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1568, 1376)
-
-[node name="Wall16" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1504, 1568)
-rotation = 1.57079
-
-[node name="Wall17" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(992, 1568)
-rotation = 1.57079
-
-[node name="Wall18" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1248, 1568)
-rotation = 1.57079
-
-[node name="Wall19" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(736, 1568)
-rotation = 1.57079
-
-[node name="Wall20" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(224, 1568)
-rotation = 1.57079
-
-[node name="Wall21" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(480, 1568)
-rotation = 1.57079
-
 [node name="Blue_walls" type="CanvasGroup" parent="."]
 position = Vector2(199, -102)
+
+[node name="Carpet" parent="Blue_walls" instance=ExtResource("6_5ltnv")]
+position = Vector2(1161, 874)
+rotation = 1.5708
+
+[node name="blue_wall_right" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, -74)
+
+[node name="blue_wall_right7" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 246)
+
+[node name="blue_wall_right8" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 406)
+
+[node name="blue_wall_right5" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 566)
+
+[node name="blue_wall_right6" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 726)
+
+[node name="blue_wall_right3" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 886)
+
+[node name="blue_wall_right9" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 1206)
+
+[node name="blue_wall_right11" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 1526)
+
+[node name="blue_wall_right10" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 1366)
+
+[node name="blue_wall_right4" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 1046)
+
+[node name="blue_wall_right2" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1212, 86)
+
+[node name="blue_wall_left" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, -74)
+
+[node name="blue_wall_left2" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 86)
+
+[node name="blue_wall_left5" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 246)
+
+[node name="blue_wall_left6" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 406)
+
+[node name="blue_wall_left3" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 566)
+
+[node name="blue_wall_left4" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 726)
+
+[node name="blue_wall_left7" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 886)
+
+[node name="blue_wall_left8" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1206)
+
+[node name="blue_wall_left9" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1526)
+
+[node name="blue_wall_left10" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1366)
+
+[node name="blue_wall_left11" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1046)
 
 [node name="Wall7" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
 position = Vector2(1032, 6)
@@ -150,31 +158,54 @@ position = Vector2(105, 6)
 
 [node name="Room 1" type="CanvasGroup" parent="."]
 
-[node name="Wall3" parent="Room 1" instance=ExtResource("9_pufkl")]
-position = Vector2(352, 480)
+[node name="Toilet" parent="Room 1" instance=ExtResource("10_2b4ut")]
+position = Vector2(444, 815)
 
-[node name="Wall5" parent="Room 1" instance=ExtResource("9_pufkl")]
-position = Vector2(352, 736)
+[node name="Bath" parent="Room 1" instance=ExtResource("11_5jgct")]
+position = Vector2(139, 907)
 
-[node name="Wall4" parent="Room 1" instance=ExtResource("9_pufkl")]
-position = Vector2(288, 928)
-rotation = 1.57079
+[node name="poor_wall" parent="Room 1" instance=ExtResource("12_62gm0")]
+position = Vector2(444, 464)
 
-[node name="Brick" parent="Room 1" instance=ExtResource("10_m8qrm")]
-position = Vector2(96, 480)
+[node name="poor_wall2" parent="Room 1" instance=ExtResource("12_62gm0")]
+position = Vector2(144, 464)
 
-[node name="Brick2" parent="Room 1" instance=ExtResource("10_m8qrm")]
-position = Vector2(288, 480)
+[node name="blue_wall_right9" parent="Room 1" instance=ExtResource("7_06llg")]
+position = Vector2(464, 464)
 
-[node name="Half Brick" parent="Room 1" instance=ExtResource("11_dc1m5")]
-position = Vector2(224, 480)
-rotation = 1.57079
+[node name="blue_wall_right11" parent="Room 1" instance=ExtResource("7_06llg")]
+position = Vector2(464, 784)
+
+[node name="blue_wall_right10" parent="Room 1" instance=ExtResource("7_06llg")]
+position = Vector2(464, 624)
+
+[node name="Bathroom_Sink" parent="Room 1" instance=ExtResource("13_hhk1b")]
+position = Vector2(147, 588)
+
+[node name="orange_wall2" parent="Room 1" instance=ExtResource("14_2qb0b")]
+position = Vector2(304, 984)
+
+[node name="orange_wall3" parent="Room 1" instance=ExtResource("14_2qb0b")]
+position = Vector2(464, 984)
+
+[node name="orange_wall" parent="Room 1" instance=ExtResource("14_2qb0b")]
+position = Vector2(144, 984)
 
 [node name="Door" parent="." instance=ExtResource("12_l7eqt")]
-position = Vector2(128, 448)
+position = Vector2(244, 640)
+
+[node name="TextAreaComponent" parent="Door" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
+text_area = NodePath("CollisionShape2D")
+dialogue_title = "door"
+one_time = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/TextAreaComponent"]
+position = Vector2(50.5, -29.5)
+shape = SubResource("RectangleShape2D_krv5y")
+debug_color = Color(0.8747, 0.296871, 0.461077, 0.42)
 
 [node name="Batya" parent="." instance=ExtResource("12_equad")]
-position = Vector2(880, 632)
+position = Vector2(1212, 707)
 metadata/_edit_group_ = true
 
 [node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
@@ -201,7 +232,7 @@ shape = SubResource("RectangleShape2D_fmg8e")
 position = Vector2(308, 141)
 
 [node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
-position = Vector2(1055, 124)
+position = Vector2(883, 196)
 script = ExtResource("16_vy51l")
 
 [node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
@@ -214,7 +245,7 @@ shape = SubResource("RectangleShape2D_w1ybh")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="TextAreaComponent" parent="." node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-position = Vector2(816, 1440)
+position = Vector2(837, 1385)
 text_area = NodePath("CollisionShape2D")
 dialogue_title = "from_school_1"
 interact_type = 0
@@ -224,7 +255,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_hqn70")
 
 [node name="Fridge" parent="." instance=ExtResource("18_ocv2c")]
-position = Vector2(1456, 424)
+position = Vector2(1407, 146)
 
 [node name="TextAreaComponent2" parent="Fridge" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 position = Vector2(-112, 24)
@@ -236,5 +267,5 @@ one_time = false
 shape = SubResource("RectangleShape2D_pq78s")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
-[connection signal="health_changed" from="Player" to="HUD" method="_on_player_health_changed"]
-[connection signal="ready" from="Player" to="LevelChangeComponent" method="_on_player_ready"]
+[node name="Player" parent="." instance=ExtResource("1_7qr8g")]
+position = Vector2(735, 703)

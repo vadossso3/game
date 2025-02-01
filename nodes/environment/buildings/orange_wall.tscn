@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu8b5s2eqkddk"]
+
+[ext_resource type="Texture2D" uid="uid://d2aan0kwl2ard" path="res://assets/objects/InteriorTilesLITE.png" id="1_fpkd7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw41r"]
+atlas = ExtResource("1_fpkd7")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p73b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw41r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sixbm"]
+atlas = ExtResource("1_fpkd7")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afhw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sixbm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03sxh"]
+size = Vector2(160, 217)
+
+[node name="orange_wall" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7p73b")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.19209e-07, 120)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_afhw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_03sxh")
