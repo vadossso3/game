@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_vsyra"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
-[ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
+[ext_resource type="PackedScene" uid="uid://ddsh7hv3ohbbc" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
+[ext_resource type="PackedScene" uid="uid://juswnac5ts6r" path="res://nodes/environment/buildings/blue_wall.tscn" id="7_5tmpv"]
 [ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
 [ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="9_pufkl"]
 [ext_resource type="PackedScene" uid="uid://b04xyk5ajhccj" path="res://nodes/environment/buildings/brick.tscn" id="10_m8qrm"]
@@ -120,31 +121,32 @@ rotation = 1.57079
 position = Vector2(480, 1568)
 rotation = 1.57079
 
-[node name="Wall4" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(96, 32)
-rotation = -1.57079
+[node name="Blue_walls" type="CanvasGroup" parent="."]
+position = Vector2(199, -102)
 
-[node name="Wall6" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(608, 32)
-rotation = -1.57079
+[node name="Wall7" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(1032, 6)
 
-[node name="Wall7" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(864, 32)
-rotation = -1.57079
+[node name="Wall8" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(1192, 6)
 
-[node name="Wall8" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1120, 32)
-rotation = -1.57079
+[node name="Wall5" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(713, 6)
 
-[node name="Wall9" parent="Build" instance=ExtResource("9_pufkl")]
-position = Vector2(1376, 32)
-rotation = -1.57079
+[node name="Wall6" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(873, 6)
 
-[node name="Brick" parent="Build" instance=ExtResource("10_m8qrm")]
-position = Vector2(352, 32)
+[node name="Wall3" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(393, 6)
 
-[node name="Brick2" parent="Build" instance=ExtResource("10_m8qrm")]
-position = Vector2(544, 32)
+[node name="Wall4" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(553, 6)
+
+[node name="Wall2" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(-55, 6)
+
+[node name="Wall" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(105, 6)
 
 [node name="Room 1" type="CanvasGroup" parent="."]
 
@@ -199,7 +201,7 @@ shape = SubResource("RectangleShape2D_fmg8e")
 position = Vector2(308, 141)
 
 [node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
-position = Vector2(828, 172)
+position = Vector2(1055, 124)
 script = ExtResource("16_vy51l")
 
 [node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
