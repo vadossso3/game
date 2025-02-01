@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://crdsf6lccfm67"]
+
+[ext_resource type="Texture2D" uid="uid://mm374c460nks" path="res://assets/objects/bathroom_tile.png" id="1_dq3mg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb23p"]
+atlas = ExtResource("1_dq3mg")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7tmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb23p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bathroom_tile_2" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l7tmx")

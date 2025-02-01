@@ -47,19 +47,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6h5w"]
-radius = 128.0
-height = 352.0
+radius = 169.0
+height = 458.0
 
 [node name="Batya" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource("1_yngpe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(49.8077, -37)
+scale = Vector2(1.28462, 1.28462)
 sprite_frames = SubResource("SpriteFrames_0w3pw")
 animation = &"chill"
 frame_progress = 0.278414
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(49, -33)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n6h5w")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2dtcva6u7art"]
+
+[ext_resource type="Texture2D" uid="uid://csmtvx86fgbum" path="res://assets/objects/wooden_floor.png" id="1_yl5e8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgubp"]
+atlas = ExtResource("1_yl5e8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3o2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgubp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Wooden_floor_1" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.19209e-07, -1.19209e-07)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_t3o2s")
