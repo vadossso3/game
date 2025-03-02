@@ -1,17 +1,18 @@
 extends Node2D
 
 @export var text_area: CollisionShape2D
-@export var dialogue_title: String
+@export var dialogues: Array[String]
 @export var one_time = true
 @export_enum("Must Enter", "Must Activate") var interact_type: int
 
 var resource
 var is_player_entered
 var is_dialogue_started = false
+var current_dialogue_index = 0
 
 func _ready() -> void:
 	assert(text_area != null, "Add area 2d with collision")
-	assert(dialogue_title != null, "Add dialogue title for component")
+	assert(dialogues != null, "Fill dialogues array")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
@@ -35,15 +36,15 @@ func _input(event: InputEvent) -> void:
 			is_dialogue_started = true
 
 func _show_dialogue() -> void:
-	get_tree().get_current_scene().emit_signal("show_dialogue", dialogue_title)
+	if current_dialogue_index <= dialogues.size()-1:
+		get_tree().get_current_scene().emit_signal("show_dialogue", dialogues[current_dialogue_index])
 	
-	if one_time:
+	if one_time or current_dialogue_index == dialogues.size()-1:
 		_destroy()
 
 func _on_dialogue_ended(_resource):
 	is_dialogue_started = false
-	
-
+	current_dialogue_index = current_dialogue_index + 1
 
 func _destroy() -> void:
 	call_deferred("queue_free")

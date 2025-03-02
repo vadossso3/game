@@ -1,0 +1,503 @@
+[gd_scene load_steps=30 format=3 uid="uid://mrnaxq8h4jm1"]
+
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_7qr8g"]
+[ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_xhp58"]
+[ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
+[ext_resource type="PackedScene" uid="uid://c2dtcva6u7art" path="res://nodes/environment/buildings/wooden_floor_1.tscn" id="2_adw6w"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_vsyra"]
+[ext_resource type="PackedScene" uid="uid://dw8xa36ymsd0v" path="res://nodes/environment/buildings/wooden_floor_2.tscn" id="3_1mu1d"]
+[ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
+[ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
+[ext_resource type="PackedScene" uid="uid://csr5soqr8hixq" path="res://nodes/environment/buildings/carpet.tscn" id="6_5ltnv"]
+[ext_resource type="PackedScene" uid="uid://juswnac5ts6r" path="res://nodes/environment/buildings/blue_wall.tscn" id="7_5tmpv"]
+[ext_resource type="PackedScene" uid="uid://4w8fhktyh1va" path="res://nodes/environment/buildings/blue_wall_right.tscn" id="7_06llg"]
+[ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
+[ext_resource type="PackedScene" uid="uid://d21v2k1o5dxpu" path="res://nodes/environment/buildings/blue_wall_left.tscn" id="8_ddjsh"]
+[ext_resource type="PackedScene" uid="uid://db8hib50k7kgt" path="res://nodes/environment/buildings/toilet.tscn" id="10_2b4ut"]
+[ext_resource type="PackedScene" uid="uid://cc8l50sklbdnm" path="res://nodes/environment/buildings/bath.tscn" id="11_5jgct"]
+[ext_resource type="PackedScene" uid="uid://y7l5j0wwpf3p" path="res://nodes/environment/buildings/poor_wall.tscn" id="12_62gm0"]
+[ext_resource type="PackedScene" uid="uid://b37c1atjxp664" path="res://nodes/persons/batya.tscn" id="12_equad"]
+[ext_resource type="PackedScene" uid="uid://bsg5gp8itw7uy" path="res://nodes/environment/buildings/door.tscn" id="12_l7eqt"]
+[ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="12_qpaqa"]
+[ext_resource type="PackedScene" uid="uid://cw6cm4fdfa8rv" path="res://nodes/environment/buildings/bathroom_sink.tscn" id="13_hhk1b"]
+[ext_resource type="PackedScene" uid="uid://oqlb6p3nw4kq" path="res://nodes/persons/lil_nigga.tscn" id="15_70rhs"]
+[ext_resource type="PackedScene" uid="uid://cqdgse6aoqdn7" path="res://nodes/environment/buildings/hiden_wall.tscn" id="16_1nvqg"]
+[ext_resource type="Script" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
+[ext_resource type="PackedScene" uid="uid://c1fxa27wnpgpk" path="res://nodes/components/text_area_component.tscn" id="17_w7pad"]
+[ext_resource type="PackedScene" uid="uid://lbqxi2p66l68" path="res://nodes/environment/furniture/fridge.tscn" id="18_ocv2c"]
+[ext_resource type="PackedScene" uid="uid://blxxyl22s01d8" path="res://nodes/environment/buildings/bathroom_tile_1.tscn" id="26_yfmww"]
+[ext_resource type="PackedScene" uid="uid://crdsf6lccfm67" path="res://nodes/environment/buildings/bathroom_tile_2.tscn" id="27_hdhje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e14b0"]
+size = Vector2(568, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
+size = Vector2(128, 56)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xhp58")
+resourse_path = "res://assets/dialogs/main.dialogue"
+
+[node name="Wooden_floor" type="CanvasGroup" parent="."]
+
+[node name="Wooden_floor_4" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(304, 1424)
+
+[node name="Wooden_floor_1" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(144, 1264)
+
+[node name="Wooden_floor_3" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(304, 1264)
+
+[node name="Wooden_floor_2" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(144, 1424)
+
+[node name="Wooden_floor_5" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(624, 1424)
+
+[node name="Wooden_floor_6" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(464, 1264)
+
+[node name="Wooden_floor_7" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(624, 1264)
+
+[node name="Wooden_floor_8" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(464, 1424)
+
+[node name="Wooden_floor_9" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(944, 1424)
+
+[node name="Wooden_floor_10" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(784, 1264)
+
+[node name="Wooden_floor_11" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(944, 1264)
+
+[node name="Wooden_floor_12" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(784, 1424)
+
+[node name="Wooden_floor_13" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1264, 1424)
+
+[node name="Wooden_floor_74" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1424, 1424)
+
+[node name="Wooden_floor_75" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1424, 1264)
+
+[node name="Wooden_floor_76" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1424, 1104)
+
+[node name="Wooden_floor_77" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1424, 944)
+
+[node name="Wooden_floor_78" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1424, 784)
+
+[node name="Wooden_floor_79" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1424, 624)
+
+[node name="Wooden_floor_80" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1424, 464)
+
+[node name="Wooden_floor_81" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1424, 304)
+
+[node name="Wooden_floor_82" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1424, 144)
+
+[node name="Wooden_floor_14" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1104, 1264)
+
+[node name="Wooden_floor_15" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1264, 1264)
+
+[node name="Wooden_floor_16" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1104, 1424)
+
+[node name="Wooden_floor_17" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(624, 1104)
+
+[node name="Wooden_floor_18" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(624, 944)
+
+[node name="Wooden_floor_19" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(944, 1104)
+
+[node name="Wooden_floor_20" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(784, 944)
+
+[node name="Wooden_floor_21" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(944, 944)
+
+[node name="Wooden_floor_22" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(784, 1104)
+
+[node name="Wooden_floor_23" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1264, 1104)
+
+[node name="Wooden_floor_24" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1104, 944)
+
+[node name="Wooden_floor_25" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1264, 944)
+
+[node name="Wooden_floor_26" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1104, 1104)
+
+[node name="Wooden_floor_27" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(624, 784)
+
+[node name="Wooden_floor_28" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(624, 624)
+
+[node name="Wooden_floor_29" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(944, 784)
+
+[node name="Wooden_floor_30" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(784, 624)
+
+[node name="Wooden_floor_31" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(944, 624)
+
+[node name="Wooden_floor_32" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(784, 784)
+
+[node name="Wooden_floor_33" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1264, 784)
+
+[node name="Wooden_floor_34" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1104, 624)
+
+[node name="Wooden_floor_35" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1264, 624)
+
+[node name="Wooden_floor_36" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1104, 784)
+
+[node name="Wooden_floor_37" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(624, 464)
+
+[node name="Wooden_floor_38" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(624, 304)
+
+[node name="Wooden_floor_39" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(944, 464)
+
+[node name="Wooden_floor_40" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(784, 304)
+
+[node name="Wooden_floor_41" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(944, 304)
+
+[node name="Wooden_floor_42" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(784, 464)
+
+[node name="Wooden_floor_43" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1264, 464)
+
+[node name="Wooden_floor_44" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1104, 304)
+
+[node name="Wooden_floor_45" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1264, 304)
+
+[node name="Wooden_floor_46" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1104, 464)
+
+[node name="Wooden_floor_47" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(608, 2898)
+
+[node name="Wooden_floor_48" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(624, 144)
+
+[node name="Wooden_floor_49" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(784, 144)
+
+[node name="Wooden_floor_50" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(448, 2898)
+
+[node name="Wooden_floor_51" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(928, 2898)
+
+[node name="Wooden_floor_52" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(944, 144)
+
+[node name="Wooden_floor_53" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1104, 144)
+
+[node name="Wooden_floor_54" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(768, 2898)
+
+[node name="Wooden_floor_55" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(144, 304)
+
+[node name="Wooden_floor_56" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1264, 144)
+
+[node name="Wooden_floor_57" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(144, 144)
+
+[node name="Wooden_floor_58" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1088, 2898)
+
+[node name="Wooden_floor_59" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(464, 304)
+
+[node name="Wooden_floor_60" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(304, 144)
+
+[node name="Wooden_floor_61" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(464, 144)
+
+[node name="Wooden_floor_62" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(304, 304)
+
+[node name="Wooden_floor_63" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(144, 624)
+
+[node name="Wooden_floor_64" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(144, 464)
+
+[node name="Wooden_floor_65" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(464, 624)
+
+[node name="Wooden_floor_66" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(304, 464)
+
+[node name="Wooden_floor_67" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(464, 464)
+
+[node name="Wooden_floor_68" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(304, 624)
+
+[node name="Wooden_floor_69" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1248, 2898)
+
+[node name="Wooden_floor_70" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1568, 2898)
+
+[node name="Wooden_floor_71" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1408, 2898)
+
+[node name="Wooden_floor_72" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
+position = Vector2(1888, 2898)
+
+[node name="Wooden_floor_73" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
+position = Vector2(1728, 2898)
+
+[node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
+script = ExtResource("2_vsyra")
+
+[node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
+position = Vector2(159, 154)
+
+[node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
+position = Vector2(608, 176)
+collision_layer = 72
+
+[node name="Build" type="CanvasGroup" parent="."]
+
+[node name="Bathroom" type="CanvasGroup" parent="."]
+
+[node name="Bathroom_tile" parent="Bathroom" instance=ExtResource("26_yfmww")]
+position = Vector2(284, 944)
+
+[node name="Bathroom_tile_2" parent="Bathroom" instance=ExtResource("27_hdhje")]
+position = Vector2(284, 1104)
+
+[node name="Bathroom_tile2" parent="Bathroom" instance=ExtResource("26_yfmww")]
+position = Vector2(444, 1104)
+
+[node name="Bathroom_tile_3" parent="Bathroom" instance=ExtResource("27_hdhje")]
+position = Vector2(444, 944)
+
+[node name="Bathroom_tile3" parent="Bathroom" instance=ExtResource("26_yfmww")]
+position = Vector2(284, 784)
+
+[node name="Bathroom_tile_4" parent="Bathroom" instance=ExtResource("27_hdhje")]
+position = Vector2(444, 784)
+
+[node name="Bathroom_tile4" parent="Bathroom" instance=ExtResource("26_yfmww")]
+position = Vector2(124, 944)
+
+[node name="Bathroom_tile_5" parent="Bathroom" instance=ExtResource("27_hdhje")]
+position = Vector2(124, 1104)
+
+[node name="Bathroom_tile5" parent="Bathroom" instance=ExtResource("26_yfmww")]
+position = Vector2(124, 784)
+
+[node name="Toilet" parent="Bathroom" instance=ExtResource("10_2b4ut")]
+position = Vector2(444, 815)
+
+[node name="Bath" parent="Bathroom" instance=ExtResource("11_5jgct")]
+position = Vector2(139, 954)
+
+[node name="poor_wall" parent="Bathroom" instance=ExtResource("12_62gm0")]
+position = Vector2(444, 464)
+
+[node name="poor_wall2" parent="Bathroom" instance=ExtResource("12_62gm0")]
+position = Vector2(144, 464)
+
+[node name="blue_wall_right9" parent="Bathroom" instance=ExtResource("7_06llg")]
+position = Vector2(464, 464)
+
+[node name="blue_wall_right12" parent="Bathroom" instance=ExtResource("7_06llg")]
+position = Vector2(464, 1104)
+
+[node name="blue_wall_right13" parent="Bathroom" instance=ExtResource("7_06llg")]
+position = Vector2(464, 944)
+
+[node name="blue_wall_right11" parent="Bathroom" instance=ExtResource("7_06llg")]
+position = Vector2(464, 784)
+
+[node name="blue_wall_right10" parent="Bathroom" instance=ExtResource("7_06llg")]
+position = Vector2(464, 624)
+
+[node name="Bathroom_Sink" parent="Bathroom" instance=ExtResource("13_hhk1b")]
+position = Vector2(147, 588)
+
+[node name="hiden_wall2" parent="Bathroom" instance=ExtResource("16_1nvqg")]
+position = Vector2(464, 1129)
+
+[node name="hiden_wall3" parent="Bathroom" instance=ExtResource("16_1nvqg")]
+position = Vector2(304, 1129)
+
+[node name="hiden_wall" parent="Bathroom" instance=ExtResource("16_1nvqg")]
+position = Vector2(144, 1129)
+
+[node name="Door" parent="Bathroom" instance=ExtResource("12_l7eqt")]
+visible = false
+position = Vector2(244, 640)
+
+[node name="Blue_walls" type="CanvasGroup" parent="."]
+position = Vector2(199, -102)
+
+[node name="Carpet" parent="Blue_walls" instance=ExtResource("6_5ltnv")]
+position = Vector2(1169, 829)
+rotation = 1.5708
+
+[node name="blue_wall_right" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, -74)
+
+[node name="blue_wall_right7" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 246)
+
+[node name="blue_wall_right8" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 406)
+
+[node name="blue_wall_right5" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 566)
+
+[node name="blue_wall_right6" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 726)
+
+[node name="blue_wall_right3" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 886)
+
+[node name="blue_wall_right9" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 1206)
+
+[node name="blue_wall_right11" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 1526)
+
+[node name="blue_wall_right10" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 1366)
+
+[node name="blue_wall_right4" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 1046)
+
+[node name="blue_wall_right2" parent="Blue_walls" instance=ExtResource("7_06llg")]
+position = Vector2(1225, 86)
+
+[node name="blue_wall_left" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, -74)
+
+[node name="blue_wall_left2" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 86)
+
+[node name="blue_wall_left5" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 246)
+
+[node name="blue_wall_left6" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 406)
+
+[node name="blue_wall_left3" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 566)
+
+[node name="blue_wall_left4" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 726)
+
+[node name="blue_wall_left7" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 886)
+
+[node name="blue_wall_left8" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1206)
+
+[node name="blue_wall_left9" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1526)
+
+[node name="blue_wall_left10" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1366)
+
+[node name="blue_wall_left11" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
+position = Vector2(-75, 1046)
+
+[node name="Wall7" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(1045, 6)
+
+[node name="Wall8" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(1205, 6)
+
+[node name="Wall5" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(726, 6)
+
+[node name="Wall6" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(886, 6)
+
+[node name="Wall3" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(406, 6)
+
+[node name="Wall4" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(566, 6)
+
+[node name="Wall2" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(-55, 6)
+
+[node name="Wall" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
+position = Vector2(105, 6)
+
+[node name="Batya" parent="." instance=ExtResource("12_equad")]
+position = Vector2(1165, 692)
+metadata/_edit_group_ = true
+
+[node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
+text_area = NodePath("CollisionShape2D")
+dialogues = ["batya_1", "batya_2", "batya_3"]
+one_time = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Batya/TextAreaComponent"]
+position = Vector2(63, -44)
+shape = SubResource("RectangleShape2D_e14b0")
+
+[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
+position = Vector2(448, 24)
+collision_area = NodePath("CollisionShape2D")
+level_to = "res://nodes/scenes/level_1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_fmg8e")
+
+[node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
+position = Vector2(308, 141)
+
+[node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
+position = Vector2(883, 196)
+script = ExtResource("16_vy51l")
+
+[node name="Fridge" parent="." instance=ExtResource("18_ocv2c")]
+position = Vector2(1407, 146)
+
+[node name="Player" parent="." instance=ExtResource("1_7qr8g")]
+position = Vector2(1048, 944)

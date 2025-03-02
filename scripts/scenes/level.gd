@@ -9,13 +9,17 @@ signal show_dialogue(dialogue_title)
 var resource
 
 func _ready() -> void:
-	assert(resourse_path != null, "Add path to dialogue file 'assets/dialogs'")
-	
-	resource = load(resourse_path)
-	
 	_connectHealthPotions()
 	_connectPosionPotions()
 	_connectDialogable()
+	
+	if LevelChangerGlobal.previous_level_name != null:
+		_on_level_spawn()
+
+func _on_level_spawn():
+	var levels_path = "Levels/Level_" + LevelChangerGlobal.previous_level_name
+	var level_change_component = get_node(levels_path) as Node2D
+	LevelChangerGlobal.trigger_player_spawn(level_change_component.spawn_marker.global_position)
 	
 func _connectHealthPotions() -> void:
 	var healthPotions = get_tree().get_nodes_in_group("healthPotion")

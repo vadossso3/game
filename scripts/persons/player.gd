@@ -20,9 +20,13 @@ var view_direction = "down"
 func _ready() -> void:
 	emit_signal("health_changed", health)
 	can_interact.connect(_toggle_interact_ui)
+	LevelChangerGlobal.on_trigger_player_spawn.connect(_on_spawn)
 
 func _physics_process(delta: float) -> void:
 	movement_input(delta)
+
+func _on_spawn(new_position: Vector2):
+	global_position = new_position
 
 func movement_input(delta: float) -> void:	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
