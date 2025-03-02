@@ -1,24 +1,21 @@
 extends CharacterBody2D
 
-signal health_changed(health)
 signal can_interact(status)
 
-@export var max_health = 100
 @export var offset : Vector2 = Vector2(40, -30)
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interact_dialog = $InteractDialog
+@onready var health_component = $HealthComponent
 
 const SPEED = 125.0
 
-var health = 100
 var model_width: int
 var model_height: int
 var is_dialog_now = false
 var view_direction = "down"
 
 func _ready() -> void:
-	emit_signal("health_changed", health)
 	can_interact.connect(_toggle_interact_ui)
 	LevelChangerGlobal.on_trigger_player_spawn.connect(_on_spawn)
 
@@ -60,12 +57,10 @@ func movement_input(delta: float) -> void:
 			animated_sprite.play("stay down")
 
 func _on_health_potion_pick_up(heal: Variant) -> void:
-	health = min(max_health, health + heal)
-	emit_signal("health_changed", health)
+	emit_signal("health_changed", heal)
 
 func _on_posion_potion_posion_player(damage: Variant) -> void:
-	health = max(0, health - damage)
-	emit_signal("health_changed", health)
+	emit_signal("health_changed", -damage)
 
 func _stop_movement(_resource):
 	set_physics_process(false)

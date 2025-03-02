@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cw6iolsrxmcc7"]
+[gd_scene load_steps=55 format=3 uid="uid://cw6iolsrxmcc7"]
 
 [ext_resource type="Script" path="res://scripts/persons/player.gd" id="1_h6h1p"]
 [ext_resource type="Texture2D" uid="uid://drdt0uhd15cm4" path="res://assets/persons/player/Sh_move down.png" id="2_mtb6e"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c58nynhmcvxej" path="res://assets/persons/player/Sh_stand still left.png" id="7_5f35s"]
 [ext_resource type="Texture2D" uid="uid://rtfpwgpi0rbn" path="res://assets/persons/player/Sh_stand still right.png" id="8_4sn77"]
 [ext_resource type="Texture2D" uid="uid://4va2hgvgo2eo" path="res://assets/persons/player/gg_nigga_stand_up.png" id="9_kq0en"]
+[ext_resource type="PackedScene" uid="uid://c02bmdy00pjl7" path="res://nodes/components/health_component.tscn" id="10_d73r7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn1uk"]
 atlas = ExtResource("2_mtb6e")
@@ -398,5 +399,7 @@ process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
+
+[node name="HealthComponent" parent="." instance=ExtResource("10_d73r7")]
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

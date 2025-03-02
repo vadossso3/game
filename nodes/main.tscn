@@ -290,7 +290,7 @@ position = Vector2(1728, 2898)
 script = ExtResource("5_b6877")
 
 [node name="HealthPotion" parent="." instance=ExtResource("6_tduil")]
-position = Vector2(159, 154)
+position = Vector2(456, 264)
 
 [node name="MusicCenter" parent="." instance=ExtResource("7_5cfkw")]
 position = Vector2(608, 176)
@@ -507,3 +507,5 @@ shape = SubResource("RectangleShape2D_fmg8e")
 
 [node name="Spawn" type="Marker2D" parent="Levels/Level_Level_1"]
 position = Vector2(8, 200)
+
+[editable path="Player"]

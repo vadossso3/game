@@ -7,6 +7,7 @@ extends Area2D
 
 var timer: Timer
 var elapsed_time: float = 0.0
+var poisonedBody = null
 
 signal posionPlayer(damage)
 
@@ -20,11 +21,12 @@ func start_poison():
 
 func _on_area_entered(body) -> void:
 	if body is CharacterBody2D:
+		poisonedBody = body
 		animation_player.play("pickup")
 		start_poison()
 
 func _on_damage_timer_timeout() -> void:
-	emit_signal("posionPlayer", damage_per_second)
+	poisonedBody.health_component.emit_signal("deal_damage", damage_per_second)
 	elapsed_time += 1.0
 	
 	if elapsed_time >= duration:

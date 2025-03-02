@@ -5,13 +5,13 @@ signal show_dialogue(dialogue_title)
 @export var resourse_path: String
 
 @onready var player = $Player
+@onready var HUD = $HUD
 
 var resource
 
 func _ready() -> void:
-	_connectHealthPotions()
-	_connectPosionPotions()
 	_connectDialogable()
+	_connectPlayerToHUD()
 	
 	if LevelChangerGlobal.previous_level_name != null:
 		_on_level_spawn()
@@ -20,16 +20,6 @@ func _on_level_spawn():
 	var levels_path = "Levels/Level_" + LevelChangerGlobal.previous_level_name
 	var level_change_component = get_node(levels_path) as Node2D
 	LevelChangerGlobal.trigger_player_spawn(level_change_component.spawn_marker.global_position)
-	
-func _connectHealthPotions() -> void:
-	var healthPotions = get_tree().get_nodes_in_group("healthPotion")
-	for potion in healthPotions:
-		potion.healPlayer.connect(player._on_health_potion_pick_up)
-
-func _connectPosionPotions() -> void:
-	var posionPotions = get_tree().get_nodes_in_group("posionPotion")
-	for potion in posionPotions:
-		potion.posionPlayer.connect(player._on_posion_potion_posion_player)
 
 func _connectDialogable():
 	var dialog_nodes = get_tree().get_nodes_in_group("dialogable")
@@ -46,3 +36,7 @@ func _show_dialogue(title):
 
 func _on_dialogue_ended(_resource):
 	player.set_physics_process(true)
+
+func _connectPlayerToHUD():
+	player.health_component.health_changed.connect(HUD._on_player_health_changed)
+	player.health_component.emit_signal("health_changed", player.health_component.health)
