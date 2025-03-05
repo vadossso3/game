@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkvcdje3lxusd"]
+[gd_scene load_steps=11 format=3 uid="uid://dkvcdje3lxusd"]
 
 [ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_2y8oh"]
+[ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="2_xshe2"]
 [ext_resource type="PackedScene" uid="uid://dbkgob1lv0qe6" path="res://nodes/components/mob_spawner_component.tscn" id="2_yamcj"]
 [ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="3_a4pxx"]
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="4_xeihu"]
@@ -18,6 +19,8 @@ size = Vector2(64, 256)
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_2y8oh")
+
+[node name="HUD" parent="." instance=ExtResource("2_xshe2")]
 
 [node name="MobSpawnerComponent" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("2_yamcj")]
 position = Vector2(392, 392)

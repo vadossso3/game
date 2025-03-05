@@ -36,10 +36,13 @@ func _input(event: InputEvent) -> void:
 			is_dialogue_started = true
 
 func _show_dialogue() -> void:
-	if current_dialogue_index <= dialogues.size()-1:
+	if !one_time and current_dialogue_index == dialogues.size():
+		current_dialogue_index = 0
+	
+	if current_dialogue_index < dialogues.size():
 		get_tree().get_current_scene().emit_signal("show_dialogue", dialogues[current_dialogue_index])
 	
-	if one_time or current_dialogue_index == dialogues.size()-1:
+	if one_time:
 		_destroy()
 
 func _on_dialogue_ended(_resource):
