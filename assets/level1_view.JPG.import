@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cua564fgwhlu1"
-path="res://.godot/imported/gg_nigga_stand_up.png-5e66a71f1e79a6a92a46b21bc455b2f3.ctex"
+uid="uid://bwnu8idrwosq5"
+path="res://.godot/imported/level1_view.JPG-f7eed35ea93e62dc2388f54ffd6eee31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/persons/player/gg_nigga_stand_up.png"
-dest_files=["res://.godot/imported/gg_nigga_stand_up.png-5e66a71f1e79a6a92a46b21bc455b2f3.ctex"]
+source_file="res://assets/level1_view.JPG"
+dest_files=["res://.godot/imported/level1_view.JPG-f7eed35ea93e62dc2388f54ffd6eee31.ctex"]
 
 [params]
 

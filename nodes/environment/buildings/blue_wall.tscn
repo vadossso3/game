@@ -1,4 +1,4 @@
-[gd_scene load_steps=230 format=3 uid="uid://juswnac5ts6r"]
+[gd_scene load_steps=229 format=3 uid="uid://juswnac5ts6r"]
 
 [ext_resource type="Texture2D" uid="uid://d2aan0kwl2ard" path="res://assets/objects/InteriorTilesLITE.png" id="1_vpxey"]
 
@@ -1602,9 +1602,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75ov4"]
-size = Vector2(160, 211)
-
 [node name="blue_wall_up" type="StaticBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -1618,7 +1615,3 @@ position = Vector2(-3.55271e-15, 80)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ujjpe")
 animation = &"blue_Down_wall"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -54.5)
-shape = SubResource("RectangleShape2D_75ov4")

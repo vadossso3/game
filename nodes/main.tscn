@@ -1,35 +1,232 @@
-[gd_scene load_steps=34 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=22 format=3 uid="uid://mrnaxq8h4jm1"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_7qr8g"]
 [ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_xhp58"]
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
-[ext_resource type="PackedScene" uid="uid://c2dtcva6u7art" path="res://nodes/environment/buildings/wooden_floor_1.tscn" id="2_adw6w"]
+[ext_resource type="Texture2D" uid="uid://cblgoww6ucc0r" path="res://assets/objects/InteriorTilesLITE - x4.png" id="2_guhd8"]
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_vsyra"]
-[ext_resource type="PackedScene" uid="uid://dw8xa36ymsd0v" path="res://nodes/environment/buildings/wooden_floor_2.tscn" id="3_1mu1d"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
 [ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="4_q5gyy"]
-[ext_resource type="PackedScene" uid="uid://csr5soqr8hixq" path="res://nodes/environment/buildings/carpet.tscn" id="6_5ltnv"]
-[ext_resource type="PackedScene" uid="uid://juswnac5ts6r" path="res://nodes/environment/buildings/blue_wall.tscn" id="7_5tmpv"]
-[ext_resource type="PackedScene" uid="uid://4w8fhktyh1va" path="res://nodes/environment/buildings/blue_wall_right.tscn" id="7_06llg"]
 [ext_resource type="PackedScene" uid="uid://b1a10yw38ivna" path="res://nodes/environment/furniture/music_center.tscn" id="7_ixo3f"]
-[ext_resource type="PackedScene" uid="uid://d21v2k1o5dxpu" path="res://nodes/environment/buildings/blue_wall_left.tscn" id="8_ddjsh"]
-[ext_resource type="PackedScene" uid="uid://db8hib50k7kgt" path="res://nodes/environment/buildings/toilet.tscn" id="10_2b4ut"]
-[ext_resource type="PackedScene" uid="uid://cc8l50sklbdnm" path="res://nodes/environment/buildings/bath.tscn" id="11_5jgct"]
-[ext_resource type="PackedScene" uid="uid://y7l5j0wwpf3p" path="res://nodes/environment/buildings/poor_wall.tscn" id="12_62gm0"]
 [ext_resource type="PackedScene" uid="uid://b37c1atjxp664" path="res://nodes/persons/batya.tscn" id="12_equad"]
-[ext_resource type="PackedScene" uid="uid://bsg5gp8itw7uy" path="res://nodes/environment/buildings/door.tscn" id="12_l7eqt"]
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="12_qpaqa"]
-[ext_resource type="PackedScene" uid="uid://cw6cm4fdfa8rv" path="res://nodes/environment/buildings/bathroom_sink.tscn" id="13_hhk1b"]
 [ext_resource type="PackedScene" uid="uid://oqlb6p3nw4kq" path="res://nodes/persons/lil_nigga.tscn" id="15_70rhs"]
-[ext_resource type="PackedScene" uid="uid://cqdgse6aoqdn7" path="res://nodes/environment/buildings/hiden_wall.tscn" id="16_1nvqg"]
 [ext_resource type="Script" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
 [ext_resource type="PackedScene" uid="uid://c1fxa27wnpgpk" path="res://nodes/components/text_area_component.tscn" id="17_w7pad"]
 [ext_resource type="PackedScene" uid="uid://lbqxi2p66l68" path="res://nodes/environment/furniture/fridge.tscn" id="18_ocv2c"]
-[ext_resource type="PackedScene" uid="uid://blxxyl22s01d8" path="res://nodes/environment/buildings/bathroom_tile_1.tscn" id="26_yfmww"]
-[ext_resource type="PackedScene" uid="uid://crdsf6lccfm67" path="res://nodes/environment/buildings/bathroom_tile_2.tscn" id="27_hdhje"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_krv5y"]
-size = Vector2(121, 79)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffngj"]
+texture = ExtResource("2_guhd8")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8iecf"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_ffngj")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8gsv"]
 radius = 151.2
@@ -45,453 +242,40 @@ size = Vector2(120, 288)
 size = Vector2(170, 106)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq78s"]
-size = Vector2(113, 114)
+size = Vector2(140.5, 114)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xhp58")
 resourse_path = "res://assets/dialogs/main.dialogue"
 
-[node name="Wooden_floor" type="CanvasGroup" parent="."]
-
-[node name="Wooden_floor_4" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(304, 1424)
-
-[node name="Wooden_floor_1" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(144, 1264)
-
-[node name="Wooden_floor_3" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(304, 1264)
-
-[node name="Wooden_floor_2" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(144, 1424)
-
-[node name="Wooden_floor_5" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(624, 1424)
-
-[node name="Wooden_floor_6" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(464, 1264)
-
-[node name="Wooden_floor_7" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(624, 1264)
-
-[node name="Wooden_floor_8" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(464, 1424)
-
-[node name="Wooden_floor_9" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(944, 1424)
-
-[node name="Wooden_floor_10" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(784, 1264)
-
-[node name="Wooden_floor_11" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(944, 1264)
-
-[node name="Wooden_floor_12" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(784, 1424)
-
-[node name="Wooden_floor_13" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1264, 1424)
-
-[node name="Wooden_floor_74" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1424, 1424)
-
-[node name="Wooden_floor_75" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1424, 1264)
-
-[node name="Wooden_floor_76" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1424, 1104)
-
-[node name="Wooden_floor_77" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1424, 944)
-
-[node name="Wooden_floor_78" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1424, 784)
-
-[node name="Wooden_floor_79" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1424, 624)
-
-[node name="Wooden_floor_80" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1424, 464)
-
-[node name="Wooden_floor_81" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1424, 304)
-
-[node name="Wooden_floor_82" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1424, 144)
-
-[node name="Wooden_floor_14" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1104, 1264)
-
-[node name="Wooden_floor_15" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1264, 1264)
-
-[node name="Wooden_floor_16" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1104, 1424)
-
-[node name="Wooden_floor_17" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(624, 1104)
-
-[node name="Wooden_floor_18" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(624, 944)
-
-[node name="Wooden_floor_19" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(944, 1104)
-
-[node name="Wooden_floor_20" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(784, 944)
-
-[node name="Wooden_floor_21" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(944, 944)
-
-[node name="Wooden_floor_22" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(784, 1104)
-
-[node name="Wooden_floor_23" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1264, 1104)
-
-[node name="Wooden_floor_24" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1104, 944)
-
-[node name="Wooden_floor_25" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1264, 944)
-
-[node name="Wooden_floor_26" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1104, 1104)
-
-[node name="Wooden_floor_27" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(624, 784)
-
-[node name="Wooden_floor_28" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(624, 624)
-
-[node name="Wooden_floor_29" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(944, 784)
-
-[node name="Wooden_floor_30" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(784, 624)
-
-[node name="Wooden_floor_31" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(944, 624)
-
-[node name="Wooden_floor_32" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(784, 784)
-
-[node name="Wooden_floor_33" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1264, 784)
-
-[node name="Wooden_floor_34" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1104, 624)
-
-[node name="Wooden_floor_35" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1264, 624)
-
-[node name="Wooden_floor_36" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1104, 784)
-
-[node name="Wooden_floor_37" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(624, 464)
-
-[node name="Wooden_floor_38" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(624, 304)
-
-[node name="Wooden_floor_39" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(944, 464)
-
-[node name="Wooden_floor_40" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(784, 304)
-
-[node name="Wooden_floor_41" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(944, 304)
-
-[node name="Wooden_floor_42" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(784, 464)
-
-[node name="Wooden_floor_43" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1264, 464)
-
-[node name="Wooden_floor_44" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1104, 304)
-
-[node name="Wooden_floor_45" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1264, 304)
-
-[node name="Wooden_floor_46" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1104, 464)
-
-[node name="Wooden_floor_47" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(608, 2898)
-
-[node name="Wooden_floor_48" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(624, 144)
-
-[node name="Wooden_floor_49" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(784, 144)
-
-[node name="Wooden_floor_50" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(448, 2898)
-
-[node name="Wooden_floor_51" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(928, 2898)
-
-[node name="Wooden_floor_52" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(944, 144)
-
-[node name="Wooden_floor_53" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1104, 144)
-
-[node name="Wooden_floor_54" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(768, 2898)
-
-[node name="Wooden_floor_55" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(144, 304)
-
-[node name="Wooden_floor_56" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1264, 144)
-
-[node name="Wooden_floor_57" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(144, 144)
-
-[node name="Wooden_floor_58" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1088, 2898)
-
-[node name="Wooden_floor_59" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(464, 304)
-
-[node name="Wooden_floor_60" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(304, 144)
-
-[node name="Wooden_floor_61" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(464, 144)
-
-[node name="Wooden_floor_62" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(304, 304)
-
-[node name="Wooden_floor_63" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(144, 624)
-
-[node name="Wooden_floor_64" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(144, 464)
-
-[node name="Wooden_floor_65" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(464, 624)
-
-[node name="Wooden_floor_66" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(304, 464)
-
-[node name="Wooden_floor_67" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(464, 464)
-
-[node name="Wooden_floor_68" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(304, 624)
-
-[node name="Wooden_floor_69" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1248, 2898)
-
-[node name="Wooden_floor_70" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1568, 2898)
-
-[node name="Wooden_floor_71" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1408, 2898)
-
-[node name="Wooden_floor_72" parent="Wooden_floor" instance=ExtResource("2_adw6w")]
-position = Vector2(1888, 2898)
-
-[node name="Wooden_floor_73" parent="Wooden_floor" instance=ExtResource("3_1mu1d")]
-position = Vector2(1728, 2898)
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8iecf")
+format = 2
+layer_0/name = "Ground"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 65546, 0, 1, 131082, 0, 1, 196618, 0, 1, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 655369, 0, 0, 655368, 0, 0, 655367, 0, 0, 655366, 0, 0, 655365, 0, 0, 655364, 0, 0, 655363, 0, 0, 655362, 0, 0, 655361, 0, 0, 655360, 0, 0, 589824, 0, 0, 524288, 0, 0, 458752, 0, 2, 393216, 0, 2, 327680, 0, 2, 262144, 0, 2, 196608, 0, 0, 131072, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 1, 65543, 0, 1, 65544, 0, 1, 65545, 0, 1, 131081, 0, 1, 196617, 0, 1, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 589832, 0, 0, 524296, 0, 0, 458760, 0, 0, 393224, 0, 0, 327688, 0, 0, 262152, 0, 0, 196616, 0, 1, 131080, 0, 1, 131079, 0, 1, 131078, 0, 1, 196614, 0, 1, 262150, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 524294, 0, 0, 589830, 0, 0, 589831, 0, 0, 196615, 0, 1, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327683, 0, 2, 393219, 0, 2, 458755, 0, 2, 458756, 0, 0, 393220, 0, 0, 131075, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 2, 262147, 0, 2, 131073, 0, 0, 196609, 0, 0, 262145, 0, 2, 327682, 0, 2, 196611, 0, 0, 327684, 0, 0, 327681, 0, 2, 393217, 0, 2, 393218, 0, 2, 458754, 0, 2, 524290, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 524292, 0, 0, 458753, 0, 2, 524289, 0, 0, 589825, 0, 0, 589829, 0, 0, 524291, 0, 0)
+layer_1/name = "Walls"
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array(-65536, 196608, 4, -65535, 196608, 4, -65534, 196608, 4, -65532, 196608, 4, -65531, 131072, 4, -65530, 327680, 4, -65529, 458752, 4, -65528, 327680, 4, -65527, 458752, 4, -65526, 458752, 4, -1, 65536, 0, 65535, 65536, 1, 131071, 65536, 1, 196607, 65536, 1, 262143, 65536, 1, 327679, 65536, 1, 393215, 65536, 1, 458751, 65536, 1, 524287, 65536, 1, 589823, 65536, 1, 720895, 65536, 1, 786431, 65536, 2, 720896, 196608, 0, 720897, 196608, 0, 720898, 196608, 0, 720899, 196608, 0, 720900, 196608, 0, 720901, 196608, 0, 720902, 196608, 0, 720903, 196608, 0, 720904, 196608, 0, 720905, 196608, 0, 720906, 196608, 0, 720907, 393216, 2, 655371, 393216, 1, 589835, 393216, 1, 524299, 393216, 1, 458763, 393216, 1, 393227, 393216, 1, 327691, 393216, 1, 262155, 393216, 1, 196619, 393216, 1, 11, 393216, 1, 65547, 393216, 1, 131083, 393216, 1, -131070, 196608, 3, -131071, 196608, 3, -131072, 196608, 3, -131068, 65536, 3, -131067, 65536, 3, -131062, 458752, 3, -131063, 327680, 3, -131064, 327680, 3, -131065, 458752, 3, -131066, 458752, 3, 524288, 196608, 0, 524289, 196608, 0, 524290, 196608, 0, 524291, 196608, 0, 524292, 393216, 2, 458756, 393216, 1, 393220, 393216, 1, 327684, 393216, 1, 262148, 393216, 1, 196611, 131072, 0, 196610, 131072, 0, 196608, 131072, 0, 196612, 393216, 0, 262150, 196608, 0, 262151, 196608, 0, 262152, 196608, 0, 262153, 196608, 0, 262154, 196608, 0, 196613, 65536, 1, 262149, 65536, 1, 524293, 65536, 1, 589829, 65536, 1, 655365, 65536, 1)
+layer_2/name = "furniture"
+layer_2/tile_data = PackedInt32Array(10, 262144, 7, -65526, 262144, 6, 8, 196608, 7, -65528, 196608, 6, -131066, 131072, 6, 9, 393216, 6, -65527, 393216, 5, 7, 327680, 6, -65529, 393216, 5, -65530, 393216, 5, 6, 393216, 6, 393219, 131072, 9, 458752, 196608, 11, 393216, 196608, 10, 196610, 196608, 8, 262146, 196608, 9, -131067, 589824, 3, -65531, 589824, 4, 131082, 851968, 6, 65544, 786432, 3, 131080, 786432, 4, 196616, 786432, 5, 65545, 917504, 3, 131081, 917504, 4, 196617, 917504, 5, 131079, 851968, 7, -65535, 983040, 5, 1, 983040, 6, -65536, 983040, 5, 0, 983040, 6, 524290, 720896, 6, 524291, 720896, 6, 458755, 655360, 5, 458754, 720896, 5, 524289, 589824, 6, 458753, 589824, 5, 262152, 917504, 8, 262153, 983040, 8, 327687, 851968, 0, 393223, 851968, 1, 458759, 851968, 1, 524295, 851968, 2, 327688, 917504, 0, 393224, 917504, 1, 458760, 917504, 1, 524296, 917504, 2, 327689, 917504, 0, 393225, 917504, 1, 458761, 917504, 1, 524297, 917504, 2, 327690, 983040, 0, 393226, 983040, 1, 458762, 983040, 1, 524298, 983040, 2, 589830, 524288, 8, 655366, 524288, 9)
+layer_3/name = "decor"
+layer_3/tile_data = PackedInt32Array(-65527, 393216, 7, -65529, 327680, 7, -131063, 262144, 5, -131065, 327680, 5, -131071, 720896, 7, 393219, 0, 268435462, 196610, 0, 8, -131068, 655360, 4, -65535, 655360, 8, 589831, 655360, 10, 589832, 720896, 10, 589833, 720896, 10, 589834, 786432, 10, 655367, 655360, 11, 655368, 720896, 11, 655369, 720896, 11, 655370, 786432, 11)
 
 [node name="HUD" parent="." instance=ExtResource("4_q5gyy")]
 script = ExtResource("2_vsyra")
 
 [node name="HealthPotion" parent="." instance=ExtResource("2_1cuwt")]
-position = Vector2(159, 154)
+position = Vector2(830, -36)
 
 [node name="MusicCenter" parent="." instance=ExtResource("7_ixo3f")]
-position = Vector2(608, 176)
+position = Vector2(122, -59)
 collision_layer = 72
 
 [node name="Build" type="CanvasGroup" parent="."]
 
-[node name="Bathroom" type="CanvasGroup" parent="."]
-
-[node name="Bathroom_tile" parent="Bathroom" instance=ExtResource("26_yfmww")]
-position = Vector2(284, 944)
-
-[node name="Bathroom_tile_2" parent="Bathroom" instance=ExtResource("27_hdhje")]
-position = Vector2(284, 1104)
-
-[node name="Bathroom_tile2" parent="Bathroom" instance=ExtResource("26_yfmww")]
-position = Vector2(444, 1104)
-
-[node name="Bathroom_tile_3" parent="Bathroom" instance=ExtResource("27_hdhje")]
-position = Vector2(444, 944)
-
-[node name="Bathroom_tile3" parent="Bathroom" instance=ExtResource("26_yfmww")]
-position = Vector2(284, 784)
-
-[node name="Bathroom_tile_4" parent="Bathroom" instance=ExtResource("27_hdhje")]
-position = Vector2(444, 784)
-
-[node name="Bathroom_tile4" parent="Bathroom" instance=ExtResource("26_yfmww")]
-position = Vector2(124, 944)
-
-[node name="Bathroom_tile_5" parent="Bathroom" instance=ExtResource("27_hdhje")]
-position = Vector2(124, 1104)
-
-[node name="Bathroom_tile5" parent="Bathroom" instance=ExtResource("26_yfmww")]
-position = Vector2(124, 784)
-
-[node name="Toilet" parent="Bathroom" instance=ExtResource("10_2b4ut")]
-position = Vector2(444, 815)
-
-[node name="Bath" parent="Bathroom" instance=ExtResource("11_5jgct")]
-position = Vector2(139, 954)
-
-[node name="poor_wall" parent="Bathroom" instance=ExtResource("12_62gm0")]
-position = Vector2(444, 464)
-
-[node name="poor_wall2" parent="Bathroom" instance=ExtResource("12_62gm0")]
-position = Vector2(144, 464)
-
-[node name="blue_wall_right9" parent="Bathroom" instance=ExtResource("7_06llg")]
-position = Vector2(464, 464)
-
-[node name="blue_wall_right12" parent="Bathroom" instance=ExtResource("7_06llg")]
-position = Vector2(464, 1104)
-
-[node name="blue_wall_right13" parent="Bathroom" instance=ExtResource("7_06llg")]
-position = Vector2(464, 944)
-
-[node name="blue_wall_right11" parent="Bathroom" instance=ExtResource("7_06llg")]
-position = Vector2(464, 784)
-
-[node name="blue_wall_right10" parent="Bathroom" instance=ExtResource("7_06llg")]
-position = Vector2(464, 624)
-
-[node name="Bathroom_Sink" parent="Bathroom" instance=ExtResource("13_hhk1b")]
-position = Vector2(147, 588)
-
-[node name="hiden_wall2" parent="Bathroom" instance=ExtResource("16_1nvqg")]
-position = Vector2(464, 1129)
-
-[node name="hiden_wall3" parent="Bathroom" instance=ExtResource("16_1nvqg")]
-position = Vector2(304, 1129)
-
-[node name="hiden_wall" parent="Bathroom" instance=ExtResource("16_1nvqg")]
-position = Vector2(144, 1129)
-
-[node name="Door" parent="Bathroom" instance=ExtResource("12_l7eqt")]
-visible = false
-position = Vector2(244, 640)
-
-[node name="TextAreaComponent" parent="Bathroom/Door" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-text_area = NodePath("CollisionShape2D")
-dialogue_title = "door"
-one_time = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom/Door/TextAreaComponent"]
-position = Vector2(50.5, -29.5)
-shape = SubResource("RectangleShape2D_krv5y")
-debug_color = Color(0.8747, 0.296871, 0.461077, 0.42)
-
-[node name="Blue_walls" type="CanvasGroup" parent="."]
-position = Vector2(199, -102)
-
-[node name="Carpet" parent="Blue_walls" instance=ExtResource("6_5ltnv")]
-position = Vector2(1169, 829)
-rotation = 1.5708
-
-[node name="blue_wall_right" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, -74)
-
-[node name="blue_wall_right7" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 246)
-
-[node name="blue_wall_right8" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 406)
-
-[node name="blue_wall_right5" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 566)
-
-[node name="blue_wall_right6" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 726)
-
-[node name="blue_wall_right3" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 886)
-
-[node name="blue_wall_right9" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 1206)
-
-[node name="blue_wall_right11" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 1526)
-
-[node name="blue_wall_right10" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 1366)
-
-[node name="blue_wall_right4" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 1046)
-
-[node name="blue_wall_right2" parent="Blue_walls" instance=ExtResource("7_06llg")]
-position = Vector2(1225, 86)
-
-[node name="blue_wall_left" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, -74)
-
-[node name="blue_wall_left2" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 86)
-
-[node name="blue_wall_left5" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 246)
-
-[node name="blue_wall_left6" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 406)
-
-[node name="blue_wall_left3" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 566)
-
-[node name="blue_wall_left4" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 726)
-
-[node name="blue_wall_left7" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 886)
-
-[node name="blue_wall_left8" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 1206)
-
-[node name="blue_wall_left9" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 1526)
-
-[node name="blue_wall_left10" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 1366)
-
-[node name="blue_wall_left11" parent="Blue_walls" instance=ExtResource("8_ddjsh")]
-position = Vector2(-75, 1046)
-
-[node name="Wall7" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(1045, 6)
-
-[node name="Wall8" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(1205, 6)
-
-[node name="Wall5" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(726, 6)
-
-[node name="Wall6" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(886, 6)
-
-[node name="Wall3" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(406, 6)
-
-[node name="Wall4" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(566, 6)
-
-[node name="Wall2" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(-55, 6)
-
-[node name="Wall" parent="Blue_walls" instance=ExtResource("7_5tmpv")]
-position = Vector2(105, 6)
-
 [node name="Batya" parent="." instance=ExtResource("12_equad")]
-position = Vector2(1165, 692)
+position = Vector2(1096, 1158)
 metadata/_edit_group_ = true
 
 [node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
@@ -507,19 +291,19 @@ shape = SubResource("CapsuleShape2D_l8gsv")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("12_qpaqa")]
-position = Vector2(448, 24)
+position = Vector2(385, -25)
 collision_area = NodePath("CollisionShape2D")
 level_to = "res://nodes/scenes/level_1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
-position = Vector2(0, 4)
+position = Vector2(64, -3)
 shape = SubResource("RectangleShape2D_fmg8e")
 
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
-position = Vector2(308, 141)
+position = Vector2(27, -38)
 
 [node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
-position = Vector2(883, 196)
+position = Vector2(820, 147)
 script = ExtResource("16_vy51l")
 
 [node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
@@ -532,7 +316,7 @@ shape = SubResource("RectangleShape2D_w1ybh")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="TextAreaComponent" parent="." node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
-position = Vector2(837, 1400)
+position = Vector2(85, 1213)
 text_area = NodePath("CollisionShape2D")
 dialogue_title = "from_school_1"
 interact_type = 0
@@ -542,7 +326,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_hqn70")
 
 [node name="Fridge" parent="." instance=ExtResource("18_ocv2c")]
-position = Vector2(1407, 146)
+position = Vector2(1344, -26)
 
 [node name="TextAreaComponent2" parent="Fridge" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 position = Vector2(-112, 24)
@@ -551,8 +335,16 @@ dialogue_title = "fridge"
 one_time = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/TextAreaComponent2"]
+position = Vector2(103, 117)
 shape = SubResource("RectangleShape2D_pq78s")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
-position = Vector2(681, 1170)
+position = Vector2(618, 1121)
+
+[node name="Level_border" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level_border"]
+position = Vector2(-64, -47)
+polygon = PackedVector2Array(1472, 1475, 1471, 48, 578, 47, 578, -10, 449, -9, 448, 47, 64, 47, 65, 1476, 1472, 1476, 1472, 1553, -43, 1554, -75, 332, -46, -294, 1633, -278, 1586, 1503, 1483, 1552, 1477, 1506)

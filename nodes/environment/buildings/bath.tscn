@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc8l50sklbdnm"]
+[gd_scene load_steps=6 format=3 uid="uid://cc8l50sklbdnm"]
 
 [ext_resource type="Texture2D" uid="uid://d2aan0kwl2ard" path="res://assets/objects/InteriorTilesLITE.png" id="1_spf3o"]
 
@@ -32,9 +32,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hneei"]
-size = Vector2(150, 310)
-
 [node name="Bath" type="StaticBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -45,7 +42,3 @@ sprite_frames = SubResource("SpriteFrames_rdwha")
 position = Vector2(-5.96046e-08, 160)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_2i3dg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 75)
-shape = SubResource("RectangleShape2D_hneei")

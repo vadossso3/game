@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cua564fgwhlu1"
-path="res://.godot/imported/gg_nigga_stand_up.png-5e66a71f1e79a6a92a46b21bc455b2f3.ctex"
+uid="uid://cblgoww6ucc0r"
+path="res://.godot/imported/InteriorTilesLITE - x4.png-889762fc19eb470e60cd93d191bffe95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/persons/player/gg_nigga_stand_up.png"
-dest_files=["res://.godot/imported/gg_nigga_stand_up.png-5e66a71f1e79a6a92a46b21bc455b2f3.ctex"]
+source_file="res://assets/objects/InteriorTilesLITE - x4.png"
+dest_files=["res://.godot/imported/InteriorTilesLITE - x4.png-889762fc19eb470e60cd93d191bffe95.ctex"]
 
 [params]
 
