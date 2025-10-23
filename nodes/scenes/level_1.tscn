@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkvcdje3lxusd"]
+[gd_scene load_steps=12 format=3 uid="uid://dkvcdje3lxusd"]
 
 [ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_2y8oh"]
 [ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="2_xshe2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="3_a4pxx"]
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="4_xeihu"]
 [ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="5_iek1y"]
+[ext_resource type="PackedScene" uid="uid://c02bmdy00pjl7" path="res://nodes/components/health_component.tscn" id="6_cb6yb"]
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="6_lsbe5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8plj"]
@@ -37,6 +38,8 @@ shape = SubResource("CircleShape2D_o8plj")
 [node name="Player" parent="." groups=["player"] instance=ExtResource("4_xeihu")]
 position = Vector2(632, 624)
 collision_mask = 125
+
+[node name="HealthComponent" parent="Player" instance=ExtResource("6_cb6yb")]
 
 [node name="Room" type="CanvasGroup" parent="."]
 position = Vector2(1088, 832)
