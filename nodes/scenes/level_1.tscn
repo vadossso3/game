@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkvcdje3lxusd"]
+[gd_scene load_steps=11 format=3 uid="uid://dkvcdje3lxusd"]
 
-[ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="1_aclrh"]
-[ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_s0est"]
-[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="2_xta5l"]
-[ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="3_ud276"]
-[ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="5_amslw"]
-[ext_resource type="PackedScene" uid="uid://dbkgob1lv0qe6" path="res://nodes/components/mob_spawner_component.tscn" id="5_pkyau"]
+[ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_2y8oh"]
+[ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="2_xshe2"]
+[ext_resource type="PackedScene" uid="uid://dbkgob1lv0qe6" path="res://nodes/components/mob_spawner_component.tscn" id="2_yamcj"]
+[ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="3_a4pxx"]
+[ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="4_xeihu"]
+[ext_resource type="PackedScene" uid="uid://1gnx7v6yop5t" path="res://nodes/environment/buildings/wall.tscn" id="5_iek1y"]
+[ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="6_lsbe5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8plj"]
 radius = 152.0
@@ -13,13 +14,18 @@ radius = 152.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7avl5"]
 size = Vector2(192, 64)
 
-[node name="Level1" type="Node2D"]
-script = ExtResource("1_s0est")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7u5y"]
+size = Vector2(64, 256)
 
-[node name="MobSpawnerComponent" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("5_pkyau")]
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_2y8oh")
+
+[node name="HUD" parent="." instance=ExtResource("2_xshe2")]
+
+[node name="MobSpawnerComponent" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("2_yamcj")]
 position = Vector2(392, 392)
 spawn_place = NodePath("Spawn area/CollisionShape2D2")
-mob = ExtResource("5_amslw")
+mob = ExtResource("3_a4pxx")
 mob_group = "enemy"
 metadata/_edit_group_ = true
 
@@ -28,67 +34,82 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MobSpawnerComponent/Spawn area"]
 shape = SubResource("CircleShape2D_o8plj")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_xta5l")]
-position = Vector2(912, 648)
+[node name="Player" parent="." groups=["player"] instance=ExtResource("4_xeihu")]
+position = Vector2(632, 624)
 collision_mask = 125
-
-[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area") instance=ExtResource("1_aclrh")]
-position = Vector2(928, 800)
-collision_area = NodePath("CollisionShape2D")
-level_to = "res://nodes/main.tscn"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
-shape = SubResource("RectangleShape2D_7avl5")
 
 [node name="Room" type="CanvasGroup" parent="."]
 position = Vector2(1088, 832)
 rotation = 3.14159
 
-[node name="Wall" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(32, 32)
 
-[node name="Wall2" parent="Room" instance=ExtResource("3_ud276")]
-position = Vector2(32, 288)
-
-[node name="Wall3" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall3" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(32, 544)
 
-[node name="Wall4" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall4" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(32, 800)
 rotation = -1.57079
 
-[node name="Wall5" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall5" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(288, 800)
 rotation = -1.57079
 
-[node name="Wall6" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall6" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(544, 800)
 rotation = -1.57079
 
-[node name="Wall7" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall7" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(800, 800)
 rotation = -1.57079
 
-[node name="Wall8" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall8" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(1056, 736)
 rotation = -3.14159
 
-[node name="Wall11" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall11" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(736, 32)
 rotation = 1.5708
 
-[node name="Wall13" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall13" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(480, 32)
 rotation = 1.5708
 
-[node name="Wall9" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall9" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(1056, 480)
 rotation = -3.14159
 
-[node name="Wall10" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall10" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(1056, 224)
 rotation = -3.14159
 
-[node name="Wall12" parent="Room" instance=ExtResource("3_ud276")]
+[node name="Wall12" parent="Room" instance=ExtResource("5_iek1y")]
 position = Vector2(992, 32)
 rotation = 1.5708
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="Level_Main" parent="Levels" node_paths=PackedStringArray("collision_area", "spawn_marker") instance=ExtResource("6_lsbe5")]
+position = Vector2(928, 800)
+collision_area = NodePath("CollisionShape2D")
+level_to_path = "res://nodes/Main.tscn"
+spawn_marker = NodePath("Spawn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level_Main"]
+shape = SubResource("RectangleShape2D_7avl5")
+
+[node name="Spawn" type="Marker2D" parent="Levels/Level_Main"]
+position = Vector2(0, -272)
+
+[node name="Level_2" parent="Levels" node_paths=PackedStringArray("collision_area", "spawn_marker") instance=ExtResource("6_lsbe5")]
+position = Vector2(1056, 448)
+collision_area = NodePath("CollisionShape2D")
+level_to_path = "res://nodes/scenes/Level_2.tscn"
+spawn_marker = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level_2"]
+shape = SubResource("RectangleShape2D_h7u5y")
+
+[node name="Marker2D" type="Marker2D" parent="Levels/Level_2"]
+position = Vector2(-128, 0)

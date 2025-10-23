@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="demka"
-run/main_scene="res://nodes/main.tscn"
+run/main_scene="res://nodes/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+LevelChangerGlobal="*res://scripts/globals/level_changer_global.gd"
 
 [debug]
 
@@ -86,7 +87,7 @@ action={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogs/batya.dialogue", "res://assets/dialogs/ne_batya.dialogue", "res://assets/dialogs/main.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogs/main.dialogue")
 
 [layer_names]
 
