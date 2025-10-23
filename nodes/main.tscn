@@ -236,7 +236,7 @@ height = 400.0
 size = Vector2(128, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1ybh"]
-size = Vector2(120, 288)
+size = Vector2(146, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqn70"]
 size = Vector2(170, 106)
@@ -275,7 +275,7 @@ collision_layer = 72
 [node name="Build" type="CanvasGroup" parent="."]
 
 [node name="Batya" parent="." instance=ExtResource("12_equad")]
-position = Vector2(1096, 1158)
+position = Vector2(1085, 1174)
 metadata/_edit_group_ = true
 
 [node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
@@ -303,7 +303,7 @@ shape = SubResource("RectangleShape2D_fmg8e")
 position = Vector2(27, -38)
 
 [node name="Lil_nigga" parent="." instance=ExtResource("15_70rhs")]
-position = Vector2(820, 147)
+position = Vector2(947, -23)
 script = ExtResource("16_vy51l")
 
 [node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
@@ -311,7 +311,7 @@ text_area = NodePath("CollisionShape2D")
 dialogue_title = "brother"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lil_nigga/TextAreaComponent"]
-position = Vector2(4, 28)
+position = Vector2(5, 88)
 shape = SubResource("RectangleShape2D_w1ybh")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
@@ -343,8 +343,14 @@ debug_color = Color(1, 0, 0.0166664, 0.419608)
 position = Vector2(618, 1121)
 
 [node name="Level_border" type="StaticBody2D" parent="."]
-visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level_border"]
+[node name="level" type="CollisionPolygon2D" parent="Level_border"]
+visible = false
 position = Vector2(-64, -47)
 polygon = PackedVector2Array(1472, 1475, 1471, 48, 578, 47, 578, -10, 449, -9, 448, 47, 64, 47, 65, 1476, 1472, 1476, 1472, 1553, -43, 1554, -75, 332, -46, -294, 1633, -278, 1586, 1503, 1483, 1552, 1477, 1506)
+
+[node name="bath" type="CollisionPolygon2D" parent="Level_border"]
+polygon = PackedVector2Array(128, 493, 128, 511, 1, 512, 0, 1028, 509, 1027, 512, 511, 257, 512, 256, 492, 528, 493, 529, 1041, -16, 1042, -16, 493)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level_border"]
+polygon = PackedVector2Array(753, 1429, 753, 1024, 768, 1024, 768, 1408, 1408, 1409, 1406, 543, 769, 544, 768, 639, 750, 639, 753, 384, 769, 384, 768, 512, 1406, 516, 1408, 56, 768, 60, 768, -20, 1442, -15, 1441, 1445)
