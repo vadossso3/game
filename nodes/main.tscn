@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://mrnaxq8h4jm1"]
+[gd_scene load_steps=22 format=3 uid="uid://bvylucnucipxu"]
 
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_7qr8g"]
-[ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_xhp58"]
+[ext_resource type="Script" uid="uid://cguw284urn73m" path="res://scripts/scenes/level.gd" id="1_xhp58"]
 [ext_resource type="PackedScene" uid="uid://1hhosigtpgfu" path="res://nodes/environment/pickable/healthPotion.tscn" id="2_1cuwt"]
 [ext_resource type="Texture2D" uid="uid://cblgoww6ucc0r" path="res://assets/objects/InteriorTilesLITE - x4.png" id="2_guhd8"]
 [ext_resource type="PackedScene" uid="uid://c2er2u8a3td4p" path="res://nodes/environment/pickable/posionPotion.tscn" id="4_p5bvm"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bukmhsy1g1cvf" path="res://nodes/scenes/LevelChangeComponent.tscn" id="12_qpaqa"]
 [ext_resource type="PackedScene" uid="uid://c02bmdy00pjl7" path="res://nodes/components/health_component.tscn" id="14_q27qf"]
 [ext_resource type="PackedScene" uid="uid://oqlb6p3nw4kq" path="res://nodes/persons/lil_nigga.tscn" id="15_70rhs"]
-[ext_resource type="Script" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
+[ext_resource type="Script" uid="uid://cajyyl8yqggwx" path="res://scripts/persons/lil_nigga.gd" id="16_vy51l"]
 [ext_resource type="PackedScene" uid="uid://c1fxa27wnpgpk" path="res://nodes/components/text_area_component.tscn" id="17_w7pad"]
 [ext_resource type="PackedScene" uid="uid://lbqxi2p66l68" path="res://nodes/environment/furniture/fridge.tscn" id="18_ocv2c"]
 
@@ -336,7 +336,7 @@ shape = SubResource("RectangleShape2D_pq78s")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
-position = Vector2(477, 315)
+position = Vector2(800, 880)
 
 [node name="HealthComponent" parent="Player" instance=ExtResource("14_q27qf")]
 
