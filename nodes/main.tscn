@@ -229,7 +229,7 @@ tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_ffngj")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8gsv"]
-radius = 151.2
+radius = 147.19983
 height = 400.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
@@ -279,6 +279,7 @@ metadata/_edit_group_ = true
 
 [node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 text_area = NodePath("CollisionShape2D")
+dialogues = Array[String](["batya_1"])
 one_time = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Batya/TextAreaComponent"]
@@ -307,6 +308,8 @@ script = ExtResource("16_vy51l")
 
 [node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 text_area = NodePath("CollisionShape2D")
+dialogues = Array[String](["brother"])
+one_time = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lil_nigga/TextAreaComponent"]
 position = Vector2(5, 88)
@@ -336,14 +339,13 @@ shape = SubResource("RectangleShape2D_pq78s")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
-position = Vector2(488, 264)
+position = Vector2(856, 912)
 
 [node name="HealthComponent" parent="Player" instance=ExtResource("14_q27qf")]
 
 [node name="Level_border" type="StaticBody2D" parent="."]
 
 [node name="level" type="CollisionPolygon2D" parent="Level_border"]
-visible = false
 position = Vector2(-64, -47)
 polygon = PackedVector2Array(1472, 1475, 1471, 48, 578, 47, 578, -10, 449, -9, 448, 47, 64, 47, 65, 1476, 1472, 1476, 1472, 1553, -43, 1554, -75, 332, -46, -294, 1633, -278, 1586, 1503, 1483, 1552, 1477, 1506)
 
