@@ -229,11 +229,8 @@ tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_ffngj")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8gsv"]
-radius = 151.2
+radius = 147.19983
 height = 400.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
-size = Vector2(128, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1ybh"]
 size = Vector2(146, 130)
@@ -244,7 +241,10 @@ size = Vector2(170, 106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq78s"]
 size = Vector2(140.5, 114)
 
-[node name="Main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmg8e"]
+size = Vector2(128, 56)
+
+[node name="Level_Main" type="Node2D"]
 script = ExtResource("1_xhp58")
 resourse_path = "res://assets/dialogs/main.dialogue"
 
@@ -279,6 +279,7 @@ metadata/_edit_group_ = true
 
 [node name="TextAreaComponent" parent="Batya" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 text_area = NodePath("CollisionShape2D")
+dialogues = Array[String](["batya_1"])
 one_time = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Batya/TextAreaComponent"]
@@ -287,16 +288,6 @@ rotation = 1.5708
 scale = Vector2(1.25, 1.25)
 shape = SubResource("CapsuleShape2D_l8gsv")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
-
-[node name="LevelChangeComponent" parent="." node_paths=PackedStringArray("collision_area", "spawn_marker") instance=ExtResource("12_qpaqa")]
-position = Vector2(385, -25)
-collision_area = NodePath("CollisionShape2D")
-level_to_path = "res://nodes/scenes/level_1.tscn"
-spawn_marker = NodePath("../Marker2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChangeComponent"]
-position = Vector2(64, -3)
-shape = SubResource("RectangleShape2D_fmg8e")
 
 [node name="PosionPotion" parent="." instance=ExtResource("4_p5bvm")]
 position = Vector2(120, 177)
@@ -307,6 +298,8 @@ script = ExtResource("16_vy51l")
 
 [node name="TextAreaComponent" parent="Lil_nigga" node_paths=PackedStringArray("text_area") instance=ExtResource("17_w7pad")]
 text_area = NodePath("CollisionShape2D")
+dialogues = Array[String](["brother"])
+one_time = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lil_nigga/TextAreaComponent"]
 position = Vector2(5, 88)
@@ -336,14 +329,13 @@ shape = SubResource("RectangleShape2D_pq78s")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
-position = Vector2(488, 264)
+position = Vector2(200, 112)
 
 [node name="HealthComponent" parent="Player" instance=ExtResource("14_q27qf")]
 
 [node name="Level_border" type="StaticBody2D" parent="."]
 
 [node name="level" type="CollisionPolygon2D" parent="Level_border"]
-visible = false
 position = Vector2(-64, -47)
 polygon = PackedVector2Array(1472, 1475, 1471, 48, 578, 47, 578, -10, 449, -9, 448, 47, 64, 47, 65, 1476, 1472, 1476, 1472, 1553, -43, 1554, -75, 332, -46, -294, 1633, -278, 1586, 1503, 1483, 1552, 1477, 1506)
 
@@ -353,5 +345,17 @@ polygon = PackedVector2Array(128, 493, 128, 511, 1, 512, 0, 1028, 509, 1027, 512
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level_border"]
 polygon = PackedVector2Array(753, 1429, 753, 1024, 768, 1024, 768, 1408, 1408, 1409, 1406, 543, 769, 544, 768, 639, 750, 639, 753, 384, 769, 384, 768, 512, 1406, 516, 1408, 56, 768, 60, 768, -20, 1442, -15, 1441, 1445)
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(480, 73)
+[node name="Levels" type="Node" parent="."]
+
+[node name="Level_2" parent="Levels" node_paths=PackedStringArray("collision_area", "spawn_marker") instance=ExtResource("12_qpaqa")]
+position = Vector2(385, -25)
+collision_area = NodePath("CollisionShape2D")
+level_to_path = "res://nodes/scenes/Level_2.tscn"
+spawn_marker = NodePath("Marker2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/Level_2"]
+position = Vector2(64, -3)
+shape = SubResource("RectangleShape2D_fmg8e")
+
+[node name="Marker2D" type="Marker2D" parent="Levels/Level_2"]
+position = Vector2(63, 81)

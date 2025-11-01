@@ -19,7 +19,7 @@ func _ready() -> void:
 		_on_level_spawn()
 
 func _on_level_spawn():
-	var levels_path = "Levels/Level_" + LevelChangerGlobal.previous_level_name
+	var levels_path = "Levels/" + LevelChangerGlobal.previous_level_name
 	var level_change_component = get_node(levels_path) as Node2D
 	LevelChangerGlobal.trigger_player_spawn(level_change_component.spawn_marker.global_position)
 
