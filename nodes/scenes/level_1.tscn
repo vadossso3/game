@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dkvcdje3lxusd"]
 
-[ext_resource type="Script" path="res://scripts/scenes/level.gd" id="1_2y8oh"]
+[ext_resource type="Script" uid="uid://cguw284urn73m" path="res://scripts/scenes/level.gd" id="1_2y8oh"]
 [ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="2_xshe2"]
 [ext_resource type="PackedScene" uid="uid://dbkgob1lv0qe6" path="res://nodes/components/mob_spawner_component.tscn" id="2_yamcj"]
 [ext_resource type="PackedScene" uid="uid://ctma8fq04avgf" path="res://nodes/persons/enemy.tscn" id="3_a4pxx"]
@@ -20,6 +20,7 @@ size = Vector2(64, 256)
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_2y8oh")
+resourse_path = "res://assets/dialogs/main.dialogue"
 
 [node name="HUD" parent="." instance=ExtResource("2_xshe2")]
 
@@ -36,7 +37,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_o8plj")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("4_xeihu")]
-position = Vector2(632, 624)
+position = Vector2(584, 624)
 collision_mask = 125
 
 [node name="HealthComponent" parent="Player" instance=ExtResource("6_cb6yb")]
@@ -103,7 +104,7 @@ spawn_marker = NodePath("Spawn")
 shape = SubResource("RectangleShape2D_7avl5")
 
 [node name="Spawn" type="Marker2D" parent="Levels/Level_Main"]
-position = Vector2(0, -272)
+position = Vector2(0, -136)
 
 [node name="Level_2" parent="Levels" node_paths=PackedStringArray("collision_area", "spawn_marker") instance=ExtResource("6_lsbe5")]
 position = Vector2(1056, 448)
@@ -115,4 +116,4 @@ spawn_marker = NodePath("Marker2D")
 shape = SubResource("RectangleShape2D_h7u5y")
 
 [node name="Marker2D" type="Marker2D" parent="Levels/Level_2"]
-position = Vector2(-128, 0)
+position = Vector2(-136, 0)
