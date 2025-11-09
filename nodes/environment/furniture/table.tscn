@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbp7d0qxevff0"]
+
+[ext_resource type="Script" uid="uid://bw0pnwbe70uow" path="res://scripts/environment/furniture/table.gd" id="1_mccvw"]
+[ext_resource type="Texture2D" uid="uid://b040irn8nwprv" path="res://assets/ui/back-arrow-svgrepo-com.svg" id="2_wcm6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jujpg"]
+size = Vector2(248, 104)
+
+[sub_resource type="Gradient" id="Gradient_jujpg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qix34"]
+gradient = SubResource("Gradient_jujpg")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qix34"]
+size = Vector2(288, 136)
+
+[node name="Table" type="StaticBody2D" groups=["interactable"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_mccvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jujpg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.8750014, 1.6250002)
+texture = SubResource("GradientTexture2D_qix34")
+
+[node name="Area2D" type="Area2D" parent="." groups=["interactable"]]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qix34")
+debug_color = Color(0.71864367, 0, 0.18527639, 0.41960785)
+
+[node name="ui" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="tableUI" type="ColorRect" parent="ui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39010006, 0.29470095, 0.22480717, 1)
+
+[node name="trash" type="ColorRect" parent="ui"]
+unique_name_in_owner = true
+offset_left = 1096.0
+offset_top = 72.0
+offset_right = 1216.0
+offset_bottom = 184.0
+color = Color(0, 0.2602602, 0.316708, 1)
+
+[node name="marihuanas" type="Control" parent="ui"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="marihuana" type="ColorRect" parent="ui/marihuanas" groups=["draggable"]]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 216.0
+offset_right = 320.0
+offset_bottom = 256.0
+color = Color(7.941574e-07, 0.53277874, 0.2643845, 1)
+
+[node name="badMagihuana" type="ColorRect" parent="ui/marihuanas" groups=["draggable", "draggable_disable"]]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 960.00006
+offset_top = 512.32
+offset_right = 1024.0
+offset_bottom = 576.32
+color = Color(0.54172677, 0.42876086, 0.027343754, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="badMagihuana2" type="ColorRect" parent="ui/marihuanas" groups=["draggable", "draggable_disable"]]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 264.0
+offset_right = 520.0
+offset_bottom = 360.0
+color = Color(0.54172677, 0.42876086, 0.027343754, 1)
+
+[node name="badMagihuana3" type="ColorRect" parent="ui/marihuanas" groups=["draggable", "draggable_disable"]]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 288.0
+offset_right = 736.0
+offset_bottom = 328.0
+color = Color(0.54172677, 0.42876086, 0.027343754, 1)
+
+[node name="hand" type="Control" parent="ui"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 464.0
+
+[node name="arm" type="ColorRect" parent="ui/hand"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_right = 0.016
+offset_left = -0.64000005
+offset_right = 39.36
+offset_bottom = 464.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.611094, 0.0035791951, 0.93462014, 1)
+
+[node name="fist" type="ColorRect" parent="ui/hand"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_right = 0.016
+offset_left = -0.64000005
+offset_right = 39.36
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.5416234, 0.43277636, 0, 1)
+
+[node name="Button" type="Button" parent="ui"]
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 864.0
+offset_bottom = 872.0
+scale = Vector2(0.07999809, 0.07999809)
+icon = ExtResource("2_wcm6a")
+
+[connection signal="pressed" from="ui/Button" to="." method="_on_button_pressed"]
