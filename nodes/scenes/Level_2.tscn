@@ -1,50 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://s5qkol3i2hno"]
+[gd_scene load_steps=6 format=3 uid="uid://s5qkol3i2hno"]
 
 [ext_resource type="PackedScene" uid="uid://ci2pnvaj0i8kh" path="res://nodes/ui/HUD.tscn" id="1_1103y"]
 [ext_resource type="Script" uid="uid://cguw284urn73m" path="res://scripts/scenes/level.gd" id="1_jujpg"]
 [ext_resource type="PackedScene" uid="uid://cw6iolsrxmcc7" path="res://nodes/persons/player.tscn" id="1_lxl1x"]
 [ext_resource type="PackedScene" uid="uid://c02bmdy00pjl7" path="res://nodes/components/health_component.tscn" id="3_23jq1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jujpg"]
-size = Vector2(248, 104)
-
-[sub_resource type="Gradient" id="Gradient_jujpg"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qix34"]
-gradient = SubResource("Gradient_jujpg")
-fill_from = Vector2(1, 1)
-fill_to = Vector2(1, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qix34"]
-size = Vector2(288, 136)
+[ext_resource type="PackedScene" uid="uid://bbp7d0qxevff0" path="res://nodes/environment/furniture/table.tscn" id="5_qix34"]
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_jujpg")
 
+[node name="Table" parent="." instance=ExtResource("5_qix34")]
+
 [node name="HUD" parent="." instance=ExtResource("1_1103y")]
 
 [node name="Player" parent="." instance=ExtResource("1_lxl1x")]
-position = Vector2(680, 176)
+position = Vector2(184, 16)
 
 [node name="HealthComponent" parent="Player" instance=ExtResource("3_23jq1")]
-
-[node name="Table" type="StaticBody2D" parent="."]
-position = Vector2(344, 163)
-collision_layer = 8
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
-position = Vector2(548, 17)
-shape = SubResource("RectangleShape2D_jujpg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Table"]
-position = Vector2(547.99994, 17)
-scale = Vector2(3.8750014, 1.6250002)
-texture = SubResource("GradientTexture2D_qix34")
-
-[node name="Area2D" type="Area2D" parent="Table" groups=["interactable"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Area2D"]
-position = Vector2(552, 17)
-shape = SubResource("RectangleShape2D_qix34")
-debug_color = Color(0.71864367, 0, 0.18527639, 0.41960785)
