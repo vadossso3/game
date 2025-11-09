@@ -43,6 +43,7 @@ interactable=""
 dialogable=""
 enemy=""
 player=""
+draggable=""
 
 [input]
 

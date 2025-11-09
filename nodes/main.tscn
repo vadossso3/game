@@ -329,7 +329,7 @@ shape = SubResource("RectangleShape2D_pq78s")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("1_7qr8g")]
-position = Vector2(200, 112)
+position = Vector2(444.63638, 43.636353)
 
 [node name="HealthComponent" parent="Player" instance=ExtResource("14_q27qf")]
 
