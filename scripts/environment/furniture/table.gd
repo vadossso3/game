@@ -17,7 +17,7 @@ func _ready() -> void:
 	interact_area.body_entered.connect(_on_body_entered)
 	interact_area.body_exited.connect(_on_body_exited)
 
-	#ui.visible = false
+	ui.visible = false
 	arm = hand.get_node("fist")
 	screen_size = get_viewport_rect()
 
