@@ -99,8 +99,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = 432.0
 offset_top = 264.0
-offset_right = 472.0
-offset_bottom = 304.0
+offset_right = 520.0
+offset_bottom = 360.0
 color = Color(0.54172677, 0.42876086, 0.027343754, 1)
 
 [node name="badMagihuana3" type="ColorRect" parent="ui/marihuanas" groups=["draggable", "draggable_disable"]]

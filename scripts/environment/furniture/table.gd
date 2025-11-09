@@ -27,8 +27,6 @@ func _process(_delta: float) -> void:
 
 	if is_fist_overlapping_marihuna():
 		arm.color = Color(0.0, 0.481, 0.679)
-	else:
-		arm.color = Color(0.542, 0.433, 0.0)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
@@ -50,7 +48,6 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and is_fist_overlap:
 				is_dragging = true
-				print("drag")
 			if !event.pressed and is_dragging:
 				is_dragging = false
 				overlapObject.global_position.x = clamp(overlapObject.global_position.x, screen_size.position.x, screen_size.end.x - overlapObject.size.x)
@@ -65,18 +62,20 @@ func _on_button_pressed() -> void:
 	ui.visible = false
 
 func is_fist_overlapping_marihuna():
-	var armRect = Rect2(arm.global_position, arm.size)
+	if !is_dragging:
+		var armRect = Rect2(arm.global_position, arm.size)
 
-	for child in get_tree().get_nodes_in_group("draggable"):
-		if child is Control:
-			var childRect = Rect2(child.global_position, child.size)
-			if armRect.intersects(childRect):
-				is_fist_overlap = true
-				overlapObject = child
-				return true
+		for child in get_tree().get_nodes_in_group("draggable"):
+			if child is Control:
+				var childRect = Rect2(child.global_position, child.size)
+				if armRect.intersects(childRect):
+					is_fist_overlap = true
+					overlapObject = child
+					return true
 
-	is_fist_overlap = false
-	return false
+		arm.color = Color(0.542, 0.433, 0.0)
+		is_fist_overlap = false
+		return false
 
 func move_hand():
 	hand.position = lerp(hand.global_position, get_viewport().get_mouse_position(), 0.1)
