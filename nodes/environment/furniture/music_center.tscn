@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://b1a10yw38ivna"]
 
-[ext_resource type="Script" path="res://scripts/environment/furniture/music_center.gd" id="1_ww4rr"]
+[ext_resource type="Script" uid="uid://br7am0kkhdj1u" path="res://scripts/environment/furniture/music_center.gd" id="1_ww4rr"]
 [ext_resource type="AudioStream" uid="uid://b5c5dfyy3ky4o" path="res://assets/music/song_1.mp3" id="2_artp3"]
 [ext_resource type="Texture2D" uid="uid://bhkujp8q5x0td" path="res://assets/objects/Sh_boombox.png" id="2_lewhf"]
 
@@ -238,7 +238,7 @@ animations = [{
 size = Vector2(113, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghtx"]
-size = Vector2(144, 96)
+size = Vector2(144, 215)
 
 [node name="MusicCenter" type="StaticBody2D" groups=["interactable", "music_center"]]
 collision_layer = 8
@@ -263,6 +263,6 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 30)
+position = Vector2(0, 27.5)
 shape = SubResource("RectangleShape2D_sghtx")
 debug_color = Color(1, 0, 0.0166664, 0.419608)

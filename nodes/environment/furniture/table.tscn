@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbp7d0qxevff0"]
+[gd_scene load_steps=8 format=3 uid="uid://bbp7d0qxevff0"]
 
 [ext_resource type="Script" uid="uid://bw0pnwbe70uow" path="res://scripts/environment/furniture/table.gd" id="1_mccvw"]
+[ext_resource type="PackedScene" uid="uid://dc1sd2mbt5if4" path="res://nodes/environment/table/marijuana.tscn" id="2_0m2h2"]
 [ext_resource type="Texture2D" uid="uid://b040irn8nwprv" path="res://assets/ui/back-arrow-svgrepo-com.svg" id="2_wcm6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jujpg"]
@@ -74,6 +75,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 59.0
+offset_top = 28.0
+offset_right = 59.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -110,6 +115,16 @@ offset_top = 288.0
 offset_right = 736.0
 offset_bottom = 328.0
 color = Color(0.54172677, 0.42876086, 0.027343754, 1)
+
+[node name="marijuana" parent="ui/marihuanas" groups=["draggable"] instance=ExtResource("2_0m2h2")]
+position = Vector2(304, 94)
+
+[node name="ColorRect" type="ColorRect" parent="ui/marihuanas" groups=["draggable"]]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 64.0
+offset_right = 743.0
+offset_bottom = 98.0
 
 [node name="hand" type="Control" parent="ui"]
 unique_name_in_owner = true
