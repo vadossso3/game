@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b37c1atjxp664"]
 
 [ext_resource type="Texture2D" uid="uid://d1y6k61gyrs7s" path="res://assets/persons/homie.png" id="1_efu12"]
-[ext_resource type="Script" path="res://scripts/persons/batya.gd" id="1_yngpe"]
+[ext_resource type="Script" uid="uid://benlm1n6w3nkn" path="res://scripts/persons/batya.gd" id="1_yngpe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmfsn"]
 atlas = ExtResource("1_efu12")
@@ -47,8 +47,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6h5w"]
-radius = 169.0
-height = 458.0
+radius = 81.0
+height = 272.0
 
 [node name="Batya" type="StaticBody2D"]
 collision_layer = 4
@@ -62,6 +62,5 @@ animation = &"chill"
 frame_progress = 0.278414
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(49, -33)
-rotation = 1.5708
+position = Vector2(29, -9)
 shape = SubResource("CapsuleShape2D_n6h5w")

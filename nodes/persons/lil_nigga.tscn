@@ -45,8 +45,9 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf5ka"]
-size = Vector2(85.25, 243.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wum2x"]
+radius = 27.625269
+height = 104.931854
 
 [node name="Lil_nigga" type="StaticBody2D"]
 collision_layer = 4
@@ -59,5 +60,5 @@ sprite_frames = SubResource("SpriteFrames_g3xyn")
 animation = &"chill"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.625, 28.75)
-shape = SubResource("RectangleShape2D_lf5ka")
+position = Vector2(13, 97)
+shape = SubResource("CapsuleShape2D_wum2x")
