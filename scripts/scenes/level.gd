@@ -10,7 +10,7 @@ signal show_dialogue(dialogue_title)
 var resource
 
 func _ready() -> void:
-	if resource:
+	if resourse_path:
 		resource = load(resourse_path)
 	
 	_connectDialogable()
