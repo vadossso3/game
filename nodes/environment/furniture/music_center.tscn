@@ -238,7 +238,7 @@ animations = [{
 size = Vector2(113, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghtx"]
-size = Vector2(144, 215)
+size = Vector2(144, 266)
 
 [node name="MusicCenter" type="StaticBody2D" groups=["interactable", "music_center"]]
 collision_layer = 8
@@ -263,6 +263,6 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 27.5)
+position = Vector2(0, 53)
 shape = SubResource("RectangleShape2D_sghtx")
 debug_color = Color(1, 0, 0.0166664, 0.419608)
